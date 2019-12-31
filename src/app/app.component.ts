@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ebay-listing';
+  public title = 'Boxed White Xbox One S 500GB Games Console - Minecraft Bundle plus Titanfall';
 }
