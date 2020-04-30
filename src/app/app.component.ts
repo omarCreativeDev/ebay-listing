@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'Boxed Black Sony PS4 Slim 500GB Games Console';
+  public title = 'Apple MacBook Pro 15.4" 1TB 16GB RAM 2.9Ghz i7 Laptop with Touchbar (Late 2016)';
 }
