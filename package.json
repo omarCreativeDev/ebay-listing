@@ -6,7 +6,8 @@
     "start": "ng serve --port 6666",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "tslint --project tsconfig.json --fix && npm run lint:styles",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
     "e2e": "ng e2e"
   },
   "husky": {
