@@ -4,7 +4,8 @@
 }
 
 @mixin headingFont {
-  font-family: Palatino, 'Palatino Linotype', 'Lucida Sans Unicode', 'Lucida Grande', Garuda, sans-serif;
+  font-family: Palatino, "Palatino Linotype", "Lucida Sans Unicode",
+    "Lucida Grande", Garuda, sans-serif;
 }
 
 @mixin titleGradient {
