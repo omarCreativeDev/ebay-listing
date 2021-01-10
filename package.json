@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 6666",
+    "start": "ng serve --port 4400",
     "build": "ng build",
     "test": "ng test",
     "lint": "tslint --project tsconfig.json --fix && npm run lint:styles",
