@@ -24,7 +24,7 @@
     "eject": "react-scripts eject"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint . --fix --max-warnings=0"
     ],
     "*.{js,jsx,ts,tsx,json,html,md}": [
