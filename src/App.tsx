@@ -1,12 +1,24 @@
 import styles from './App.module.scss';
 
 function App() {
-  const title =
-    'Boxed Apple Watch Nike+ Series 4 (GPS + Cellular) 44 mm Space Grey Aluminum Case with Anthracite/Black Nike Sport Band';
-  const specsUrl =
-    'https://www.apple.com/uk/shop/product/FTXM2B/A/Refurbished-Apple-Watch-Nike-Series-4-GPS-Cellular-44mm-Space-Grey-Aluminium-Case-with-Anthracite-Black-Nike-Sport-Band';
+  const title = 'Apple iPhone 12 Pro Max - 256GB - Graphite (Unlocked) Excellent Condition';
+  const specsUrl = 'https://support.apple.com/kb/SP832?locale=en_GB';
   const { ebayListing, heading, h1, wrapper, mainSection, payment, shipping, subSection, footer } =
     styles;
+  const features = [
+    'Weight: 228g',
+    'Dimensions: 160.8 x 78.1 x 7.4mm',
+    'Display size: 6.7-inch',
+    'Resolution: 1284 x 2778',
+    'Chipset: A14 Bionic',
+    'RAM: 6GB',
+    'Storage: 128/256/512GB',
+    'Rear camera: 12MP + 12MP + 12MP',
+    'Front camera: 12MP',
+    'Pre-installed software: iOS 14',
+    'Battery: 3,687mAh',
+    'Charging: 15W wired, 7.5W wireless'
+  ];
 
   return (
     <div className={ebayListing}>
@@ -15,13 +27,13 @@ function App() {
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <p>
-            {title} for sale. Complete with all original contents. Watch is used and in good
-            condition but has some scratches on the case/screen (Please see pics). Selling as I have
-            upgraded to a newer model.
+            {title} for sale. Complete with all original contents. No visible scratches or damage.
+            It's been well looked after as its had a screen protector and a case since day one. Quad
+            lock phone case is also included. Selling as I have upgraded to a newer model.
           </p>
           <p>UK seller, no reserve so grab a bargain!</p>
           <p>
-            For a full specs please see
+            For a full specs please see&nbsp;
             <strong>{specsUrl}.</strong>
           </p>
 
@@ -29,19 +41,9 @@ function App() {
             <strong>Features</strong>
           </p>
           <ul>
-            <li>Originally released September 2018</li>
-            <li>S4 with 64-bit dual-core processor (Up to 2x faster than S3 processor)</li>
-            <li>Electrical heart sensor (ECG app)</li>
-            <li>Water resistant to 50 meters1</li>
-            <li>LTPO OLED Retina display with Force Touch (1000 nits brightness)</li>
-            <li>Wi-Fi (802.11b/g/n 2.4GHz)</li>
-            <li>Bluetooth 5.0</li>
-            <li>Optical heart sensor</li>
-            <li>Improved accelerometer</li>
-            <li>Improved Gyroscope</li>
-            <li>Ambient light sensor</li>
-            <li>Capacity 16GB2</li>
-            <li>All ceramic and sapphire crystal back</li>
+            {features.map((feature) => (
+              <li>{feature}</li>
+            ))}
           </ul>
         </div>
 
