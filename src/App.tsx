@@ -1,23 +1,31 @@
 import styles from './App.module.scss';
 
 function App() {
-  const title = 'Apple iPhone 12 Pro Max - 256GB - Graphite (Unlocked) Excellent Condition';
-  const specsUrl = 'https://support.apple.com/kb/SP832?locale=en_GB';
-  const { ebayListing, heading, h1, wrapper, mainSection, payment, shipping, subSection, footer } =
-    styles;
+  const title = 'Boxed White Sony PS5 Blu-Ray Disc Edition Console with 2 controllers';
+  const specsUrl = 'https://www.ign.com/articles/ps5-full-specs-revealed';
+  const {
+    ebayListing,
+    heading,
+    h1,
+    wrapper,
+    mainSection,
+    payment,
+    shipping,
+    subSection,
+    footer,
+    note
+  } = styles;
   const features = [
-    'Weight: 228g',
-    'Dimensions: 160.8 x 78.1 x 7.4mm',
-    'Display size: 6.7-inch',
-    'Resolution: 1284 x 2778',
-    'Chipset: A14 Bionic',
-    'RAM: 6GB',
-    'Storage: 128/256/512GB',
-    'Rear camera: 12MP + 12MP + 12MP',
-    'Front camera: 12MP',
-    'Pre-installed software: iOS 14',
-    'Battery: 3,687mAh',
-    'Charging: 15W wired, 7.5W wireless'
+    'CPU: 8x Zen 2 Cores at 3.5GHz (variable frequency)',
+    'GPU: 10.28 TFLOPs, 36 CUs at 2.23GHz (variable frequency)',
+    'GPU Architecture: Custom RDNA 2',
+    'Memory/Interface: 16GB GDDR6/256-bit',
+    'Memory Bandwidth: 448GB/s',
+    'Internal Storage: Custom 825GB SSD',
+    'IO Throughput: 5.5GB/s (Raw), Typical 8-9GB/s (Compressed)',
+    'Expandable Storage: NVMe SSD Slot',
+    'External Storage: USB HDD Support',
+    'Optical Drive: 4K UHD Blu-ray Drive'
   ];
 
   return (
@@ -28,13 +36,18 @@ function App() {
           <h2 className={heading}>Description</h2>
           <p>
             {title} for sale. Complete with all original contents. No visible scratches or damage.
-            It's been well looked after as its had a screen protector and a case since day one. Quad
-            lock phone case is also included. Selling as I have upgraded to a newer model.
           </p>
-          <p>UK seller, no reserve so grab a bargain!</p>
           <p>
-            For a full specs please see&nbsp;
-            <strong>{specsUrl}.</strong>
+            <span className={note}>
+              Both controllers have stick drift so could do with a repair.
+            </span>{' '}
+            No problems with PS5 itself at all, just needs a good clean.
+          </p>
+          <p>
+            Has been factory reset ready for new owner. UK seller, no reserve so grab a bargain!
+          </p>
+          <p>
+            For full specs please see <strong>{specsUrl}.</strong>
           </p>
 
           <p>
