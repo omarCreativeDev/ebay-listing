@@ -1,8 +1,7 @@
 import styles from './App.module.scss';
+import { FEATURES, SPECS_URL, TITLE } from './constants';
 
 function App() {
-  const title = 'Boxed White Sony PS5 Blu-Ray Disc Edition Console with 2 controllers';
-  const specsUrl = 'https://www.ign.com/articles/ps5-full-specs-revealed';
   const {
     ebayListing,
     heading,
@@ -15,27 +14,15 @@ function App() {
     footer,
     note
   } = styles;
-  const features = [
-    'CPU: 8x Zen 2 Cores at 3.5GHz (variable frequency)',
-    'GPU: 10.28 TFLOPs, 36 CUs at 2.23GHz (variable frequency)',
-    'GPU Architecture: Custom RDNA 2',
-    'Memory/Interface: 16GB GDDR6/256-bit',
-    'Memory Bandwidth: 448GB/s',
-    'Internal Storage: Custom 825GB SSD',
-    'IO Throughput: 5.5GB/s (Raw), Typical 8-9GB/s (Compressed)',
-    'Expandable Storage: NVMe SSD Slot',
-    'External Storage: USB HDD Support',
-    'Optical Drive: 4K UHD Blu-ray Drive'
-  ];
 
   return (
     <div className={ebayListing}>
-      <h1 className={`${h1} ${heading}`}>{title}</h1>
+      <h1 className={`${h1} ${heading}`}>{TITLE}</h1>
       <div className={wrapper}>
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <p>
-            {title} for sale. Complete with all original contents. No visible scratches or damage.
+            {TITLE} for sale. Complete with all original contents. No visible scratches or damage.
           </p>
           <p>
             <span className={note}>
@@ -47,15 +34,15 @@ function App() {
             Has been factory reset ready for new owner. UK seller, no reserve so grab a bargain!
           </p>
           <p>
-            For full specs please see <strong>{specsUrl}.</strong>
+            For full specs please see <strong>{SPECS_URL}.</strong>
           </p>
 
           <p>
             <strong>Features</strong>
           </p>
           <ul>
-            {features.map((feature) => (
-              <li>{feature}</li>
+            {FEATURES.map((feature) => (
+              <li key={feature}>{feature}</li>
             ))}
           </ul>
         </div>
