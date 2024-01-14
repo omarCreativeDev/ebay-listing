@@ -22,13 +22,12 @@ function App() {
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <p>
-            {TITLE} for sale. Complete with all original contents. No visible scratches or damage.
-          </p>
-          <p>
+            {TITLE} for sale. Complete with all original contents. Watch is used and in 100% working
+            order. Its in decent condition but{' '}
             <span className={note}>
-              Both controllers have stick drift so could do with a repair.
-            </span>{' '}
-            No problems with PS5 itself at all, just needs a good clean.
+              has some scratches on the screen and/or watch (Please see pics)
+            </span>
+            . Selling as I have upgraded to a newer model.
           </p>
           <p>
             Has been factory reset ready for new owner. UK seller, no reserve so grab a bargain!

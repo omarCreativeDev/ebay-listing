@@ -1,14 +1,13 @@
-export const TITLE = 'Boxed White Sony PS5 Blu-Ray Disc Edition Console with 2 controllers';
-export const SPECS_URL = 'https://www.ign.com/articles/ps5-full-specs-revealed';
+export const TITLE =
+  'Boxed Apple Watch Nike Series 6 (GPS + Cellular) 44 mm Space Grey Aluminium Case with Anthracite/Black Nike Sport Band';
+export const SPECS_URL =
+  'https://www.apple.com/uk/shop/product/FTXM2B/A/Refurbished-Apple-Watch-Nike-Series-4-GPS-Cellular-44mm-Space-Grey-Aluminium-Case-with-Anthracite-Black-Nike-Sport-Band';
 export const FEATURES = [
-  'CPU: 8x Zen 2 Cores at 3.5GHz (variable frequency)',
-  'GPU: 10.28 TFLOPs, 36 CUs at 2.23GHz (variable frequency)',
-  'GPU Architecture: Custom RDNA 2',
-  'Memory/Interface: 16GB GDDR6/256-bit',
-  'Memory Bandwidth: 448GB/s',
-  'Internal Storage: Custom 825GB SSD',
-  'IO Throughput: 5.5GB/s (Raw), Typical 8-9GB/s (Compressed)',
-  'Expandable Storage: NVMe SSD Slot',
-  'External Storage: USB HDD Support',
-  'Optical Drive: 4K UHD Blu-ray Drive'
+  'Tracking Data: Distance, time, calories burned, activity, sleep activity, heart rate, blood oxygen saturation, ECG',
+  'Connectivity: Wi-Fi, Bluetooth 4G',
+  'Navigation: GPS/GNSS receiver, 32 GB storage, apple pay, calendar',
+  'Display: LTPO OLED 368 x 448 pixels - Ion-X glass - always-on display',
+  'Battery: run time up to 18 hours',
+  'Dimensions: (WxDxH)	38 mm x 10.4 mm x 44 mm',
+  'Features: Music remote handling, camera remote control, retina display technology, fall detection, Emergency SOS, irregular beat alerts'
 ];
