@@ -2,18 +2,8 @@ import styles from './App.module.scss';
 import { FEATURES, SPECS_URL, TITLE } from './constants';
 
 function App() {
-  const {
-    ebayListing,
-    heading,
-    h1,
-    wrapper,
-    mainSection,
-    payment,
-    shipping,
-    subSection,
-    footer,
-    note
-  } = styles;
+  const { ebayListing, heading, h1, wrapper, mainSection, payment, shipping, subSection, footer } =
+    styles;
 
   return (
     <div className={ebayListing}>
@@ -22,19 +12,20 @@ function App() {
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <p>
-            {TITLE} for sale. Complete with all original contents. Watch is used and in 100% working
-            order. Its in decent condition but{' '}
-            <span className={note}>
-              has some scratches on the screen and/or watch (Please see pics)
-            </span>
-            . Selling as I have upgraded to a newer model.
+            {TITLE} for sale. This limited edition coin commemorates the 2024 Pokémon World
+            Championships in Honolulu. It features the iconic character Pikachu and is a must-have
+            for any fan of the Pokémon Trading Card Game.
           </p>
           <p>
-            Has been factory reset ready for new owner. UK seller, no reserve so grab a bargain!
+            The coin is an official Nintendo product manufactured in 2024 and is a great addition to
+            any collection. UK seller, no reserve so grab a bargain!
           </p>
-          <p>
-            For full specs please see <strong>{SPECS_URL}.</strong>
-          </p>
+
+          {SPECS_URL?.length ? (
+            <p>
+              For full specs please see <strong>{SPECS_URL}.</strong>
+            </p>
+          ) : null}
 
           <p>
             <strong>Features</strong>
@@ -72,7 +63,7 @@ function App() {
               dispatched.
             </p>
             <p>
-              <strong>No International shipping or collection so please don't ask.</strong>
+              <strong>International shipping and collection not available.</strong>
             </p>
           </div>
         </div>
