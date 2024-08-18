@@ -18,7 +18,7 @@
 
 .ebayListing {
   font-family: tahoma, arial, serif;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 auto;
   color: #000;
 
@@ -28,7 +28,7 @@
   }
 
   .heading {
-    font-size: 20px;
+    font-size: 22px;
     padding: 10px;
     text-align: center;
     margin: 0;
@@ -81,6 +81,7 @@
     @include secondaryGradient;
     @include borders;
     margin-bottom: 20px;
+    border-radius: 0 0 10px 10px;
   }
 
   .subSection {

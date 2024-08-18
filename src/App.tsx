@@ -1,6 +1,7 @@
 import styles from './App.module.scss';
 import { FEATURES, SPECS_URL, TITLE } from './constants';
 import classNames from 'classnames';
+import { Logo } from './Logo/Logo';
 
 function App() {
   const { ebayListing, heading, h1, wrapper, mainSection, payment, shipping, subSection, content } =
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <div className={ebayListing}>
+      <Logo />
       <h1 className={classNames(h1, heading)}>{TITLE}</h1>
       <div className={wrapper}>
         <div className={mainSection}>
@@ -51,7 +53,7 @@ function App() {
               <p>
                 Please also&nbsp;
                 <strong>
-                  <a href="http://shop.ebay.co.uk/merchant/pro.jdm_W0QQ_nkwZQQ_armrsZ1QQ_fromZQQ_mdoZ">
+                  <a href="https://www.ebay.co.uk/sch/i.html?_ssn=poke_relics">
                     check out my other auctions
                   </a>
                 </strong>
