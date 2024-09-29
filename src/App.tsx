@@ -16,24 +16,31 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              {TITLE} for sale. This limited edition coin commemorates the 2024 Pokémon World
-              Championships in Honolulu. It features the iconic character Pikachu and is a must-have
-              for any fan of the Pokémon Trading Card Game.
+              {TITLE} for sale. Comes boxed with all original contents. In excellent condition with
+              86% battery capacity. No visible scratches or marks as it has been kept in a case
+              alongside a screen protector since purchase.
             </p>
             <p>
-              The coin is an official Nintendo product manufactured in 2024 and is a great addition
-              to any collection. UK seller, no reserve so grab a bargain!
+              Phone is factory unlocked with no sim restrictions, selling due to upgrade. The phone
+              is in perfect working order. Screen protector has some damage (see pics) but the
+              screen itself is in perfect condition. Included is also a quad lock case which is not
+              in the best condition but still works perfectly (it seems to have lost its shape in
+              recent months).
             </p>
 
             {SPECS_URL?.length ? (
               <p>
-                For full specs please see <strong>{SPECS_URL}.</strong>
+                For full specs please visit{' '}
+                <a href={SPECS_URL} target="_blank" rel="noreferrer">
+                  <strong>{SPECS_URL}.</strong>
+                </a>
               </p>
             ) : null}
 
             <p>
               <strong>Features</strong>
             </p>
+
             <ul>
               {FEATURES.map((feature) => (
                 <li key={feature}>{feature}</li>
@@ -47,7 +54,7 @@ function App() {
             <h3 className={heading}>Payment</h3>
             <div className={content}>
               <p>
-                Only bid if you are genuinely interested in purchasing, no time wasters please!
+                Only bid/buy if you are genuinely interested in purchasing, no time wasters please!
                 Payment must be made within 48 hours. Returns are not provided.
               </p>
               <p>
@@ -66,9 +73,8 @@ function App() {
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <p>
-                All packages are shipped via a tracked delivery service either via dpd or a similar
-                courier. Please note all serial numbers are recorded prior to the item being
-                dispatched.
+                All packages are shipped via a tracked delivery service. All serial numbers are
+                recorded prior to the item being dispatched.
               </p>
               <p>
                 <strong>International shipping and collection not available.</strong>
