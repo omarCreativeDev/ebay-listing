@@ -1,5 +1,5 @@
 import styles from './App.module.scss';
-import { FEATURES, SPECS_URL, TITLE } from './constants';
+import { FEATURES, KEYWORDS, SPECS_URL, TITLE } from './constants';
 import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={ebayListing}>
       <Logo />
-      <h1 className={classNames(h1, heading)}>{TITLE}</h1>
+      <h1 className={classNames(h1, heading)}>{KEYWORDS}</h1>
       <div className={wrapper}>
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
