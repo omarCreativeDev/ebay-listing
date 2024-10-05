@@ -17,8 +17,9 @@ function App() {
           <div className={content}>
             <p>
               {TITLE} for sale. Comes boxed with all original contents. In excellent condition with
-              86% battery capacity. No visible scratches or marks as it has been kept in a case
-              alongside a screen protector since purchase.
+              86% battery capacity. No visible major scratches or marks as it has been kept in a
+              case alongside a screen protector since purchase but do expect some minor wear and
+              tear with a 2 year old phone.
             </p>
             <p>
               Phone is factory unlocked with no sim restrictions, selling due to upgrade. The phone
