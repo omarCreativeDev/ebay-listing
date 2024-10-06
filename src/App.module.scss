@@ -27,6 +27,12 @@
     text-decoration: underline;
   }
 
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
   .heading {
     font-size: 22px;
     padding: 10px;
@@ -53,21 +59,16 @@
   }
 
   li {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 12px;
   }
 
   .wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
 
-    @media only screen and (min-width: 600px) {
-      flex-direction: row;
-    }
-  }
-
-  .mainSection {
-    @media only screen and (min-width: 600px) {
-      margin-right: 20px;
+    @media only screen and (min-width: 800px) {
+      grid-template-columns: auto auto;
     }
   }
 
@@ -80,14 +81,12 @@
     padding: 0 20px 20px 20px;
     @include secondaryGradient;
     @include borders;
-    margin-bottom: 20px;
     border-radius: 0 0 10px 10px;
   }
 
   .subSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    gap: 20px;
   }
 
   .footer {

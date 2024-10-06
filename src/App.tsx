@@ -56,10 +56,11 @@ function App() {
           <div className={payment}>
             <h3 className={heading}>Payment</h3>
             <div className={content}>
-              <p>
-                Only bid/buy if you are genuinely interested in purchasing, no time wasters please!
-                Payment must be made within 48 hours. Returns are not provided.
-              </p>
+              <ul>
+                <li>Only bid/buy if you are genuinely interested in purchasing.</li>
+                <li>Payment must be made within 48 hours.</li>
+                <li>Returns are not provided.</li>
+              </ul>
               <p>
                 Please also&nbsp;
                 <strong>
@@ -75,10 +76,10 @@ function App() {
           <div className={shipping}>
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
-              <p>
-                All packages are shipped via a tracked delivery service. All serial numbers are
-                recorded prior to the item being dispatched.
-              </p>
+              <ul>
+                <li>All packages shipped via tracked delivery.</li>
+                <li>All serial numbers recorded prior to dispatch.</li>
+              </ul>
               <p>
                 <strong>International shipping and collection not available.</strong>
               </p>
