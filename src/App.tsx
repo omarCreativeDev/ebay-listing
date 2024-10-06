@@ -16,37 +16,39 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              {TITLE} for sale. Comes boxed with all original contents. In excellent condition with
-              86% battery capacity. No visible major scratches or marks as it has been kept in a
-              case alongside a screen protector since purchase but do expect some minor wear and
-              tear with a 2 year old phone.
+              {TITLE} for sale. A total of 33 cards will be sent, 4 of which are unused code cards.
+              All cards have been placed in a sleeve immediately after they were taken out from pack
+              so they are all in excellent condition. What you see in the pictures is exactly what
+              you will receive.
             </p>
+
             <p>
-              Phone is factory unlocked with no sim restrictions, selling due to upgrade. The phone
-              is in perfect working order. Screen protector has some damage (see pics) but the
-              screen itself is in perfect condition. Included is also a quad lock case which is not
-              in the best condition but still works perfectly (it seems to have lost its shape in
-              recent months).
+              This will make a great gift for anyone interested in Pokemon, free postage and 1penny
+              action start so grab an absolute bargain!
             </p>
 
             {SPECS_URL?.length ? (
               <p>
-                For full specs please visit{' '}
+                To see full card list available in Crown Zenith set please visit{' '}
                 <a href={SPECS_URL} target="_blank" rel="noreferrer">
                   <strong>{SPECS_URL}.</strong>
                 </a>
               </p>
             ) : null}
 
-            <p>
-              <strong>Features</strong>
-            </p>
+            {FEATURES.length > 0 ? (
+              <>
+                <p>
+                  <strong>Features</strong>
+                </p>
 
-            <ul>
-              {FEATURES.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
+                <ul>
+                  {FEATURES.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
           </div>
         </div>
 
