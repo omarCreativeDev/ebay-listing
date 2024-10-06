@@ -30,9 +30,7 @@ function App() {
             {SPECS_URL?.length ? (
               <p>
                 To see full card list available in Crown Zenith set please visit{' '}
-                <a href={SPECS_URL} target="_blank" rel="noreferrer">
-                  <strong>{SPECS_URL}.</strong>
-                </a>
+                <strong>{SPECS_URL}.</strong>
               </p>
             ) : null}
 
