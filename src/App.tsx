@@ -16,7 +16,9 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              {TITLE} for sale. A total of 33 cards will be sent, 4 of which are unused code cards.
+              {TITLE} for sale. A total of 23 cards will be sent, 2 of which are unused code cards.
+            </p>
+            <p>
               All cards have been placed in a sleeve immediately after they were taken out from pack
               so they are all in excellent condition. What you see in the pictures is exactly what
               you will receive.
