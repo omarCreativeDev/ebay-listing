@@ -6,8 +6,8 @@ export const Logo = () => {
   return (
     <div className={wrapper}>
       <svg
-        width="399"
-        height="107"
+        width="auto"
+        height="auto"
         viewBox="0 0 399 107"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

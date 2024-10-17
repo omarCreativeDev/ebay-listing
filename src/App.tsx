@@ -4,8 +4,18 @@ import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
 
 function App() {
-  const { ebayListing, heading, h1, wrapper, mainSection, payment, shipping, subSection, content } =
-    styles;
+  const {
+    ebayListing,
+    heading,
+    h1,
+    wrapper,
+    mainSection,
+    payment,
+    shipping,
+    subSection,
+    content,
+    link
+  } = styles;
 
   return (
     <div className={ebayListing}>
@@ -32,7 +42,7 @@ function App() {
             {SPECS_URL?.length ? (
               <p>
                 To see full card list available in Crown Zenith set please visit{' '}
-                <strong>{SPECS_URL}.</strong>
+                <strong className={link}>{SPECS_URL}.</strong>
               </p>
             ) : null}
 
@@ -49,6 +59,16 @@ function App() {
                 </ul>
               </>
             ) : null}
+
+            <p>
+              Combine postage available if you purchase multiple items. Please also&nbsp;
+              <strong>
+                <a href="https://www.ebay.co.uk/sch/i.html?_ssn=poke_relics">
+                  check out my other auctions
+                </a>
+              </strong>
+              .
+            </p>
           </div>
         </div>
 
@@ -61,15 +81,6 @@ function App() {
                 <li>Payment must be made within 48 hours.</li>
                 <li>Returns are not provided.</li>
               </ul>
-              <p>
-                Please also&nbsp;
-                <strong>
-                  <a href="https://www.ebay.co.uk/sch/i.html?_ssn=poke_relics">
-                    check out my other auctions
-                  </a>
-                </strong>
-                .
-              </p>
             </div>
           </div>
 
@@ -79,10 +90,8 @@ function App() {
               <ul>
                 <li>All packages shipped via tracked delivery.</li>
                 <li>All serial numbers recorded prior to dispatch.</li>
+                <li>International shipping and collection not available.</li>
               </ul>
-              <p>
-                <strong>International shipping and collection not available.</strong>
-              </p>
             </div>
           </div>
         </div>
