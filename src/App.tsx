@@ -14,18 +14,21 @@ function App() {
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <div className={content}>
+            <p>{TITLE} for sale.</p>
+
             <p>
-              {TITLE} for sale. A total of 23 cards will be sent, 2 of which are unused code cards.
-            </p>
-            <p>
-              All cards have been placed in a sleeve immediately after they were taken out from pack
-              so they are all in excellent condition. What you see in the pictures is exactly what
-              you will receive.
+              This Pokémon TCG card features the majestic Flygon V character, with 220 HP and a rare
+              ultra-rare rarity.
             </p>
 
             <p>
-              This will make a great gift for anyone interested in Pokemon, free postage and 1penny
-              action start so grab an absolute bargain!
+              It belongs to the Colour Dragon attribute in the game, making it a valuable addition
+              to any collector's set.
+            </p>
+
+            <p>
+              Placed in a sleeve immediately after it was removed from the pack so its in excellent
+              condition.
             </p>
 
             {SPECS_URL?.length ? (
@@ -50,7 +53,7 @@ function App() {
             ) : null}
 
             <p>
-              Combine postage available if you purchase multiple items. Please also&nbsp;
+              Please also&nbsp;
               <strong>
                 <a href="https://www.ebay.co.uk/sch/i.html?_ssn=poke_relics">
                   check out my other auctions
@@ -66,7 +69,6 @@ function App() {
             <h3 className={heading}>Payment</h3>
             <div className={content}>
               <ul>
-                <li>Only bid/buy if you are genuinely interested in purchasing.</li>
                 <li>Payment must be made within 48 hours.</li>
                 <li>Returns are not provided.</li>
               </ul>
@@ -77,7 +79,7 @@ function App() {
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
-                <li>All packages shipped via tracked delivery.</li>
+                <li>Combined postage available for multiple purchases.</li>
                 <li>All serial numbers recorded prior to dispatch.</li>
                 <li>International shipping and collection not available.</li>
               </ul>

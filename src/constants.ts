@@ -1,5 +1,5 @@
 export const TITLE =
-  '21x Sleeved Pokémon TCG Cards - Crown Zenith Bulk/Job Lot/Bundle Sword and Shield';
+  'Pokémon TCG Flygon V Sword & Shield: Brilliant Stars 164/172 Holo Ultra Rare card';
 export const KEYWORDS = `UK seller, no reserve`;
-export const SPECS_URL = 'https://www.pokedata.io/set/Crown+Zenith';
+export const SPECS_URL = '';
 export const FEATURES = [];
