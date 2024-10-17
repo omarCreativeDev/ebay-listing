@@ -4,18 +4,7 @@ import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
 
 function App() {
-  const {
-    ebayListing,
-    heading,
-    h1,
-    wrapper,
-    mainSection,
-    payment,
-    shipping,
-    subSection,
-    content,
-    link
-  } = styles;
+  const { ebayListing, heading, h1, wrapper, mainSection, spacer, content, link } = styles;
 
   return (
     <div className={ebayListing}>
@@ -72,8 +61,8 @@ function App() {
           </div>
         </div>
 
-        <div className={subSection}>
-          <div className={payment}>
+        <div>
+          <div className={spacer}>
             <h3 className={heading}>Payment</h3>
             <div className={content}>
               <ul>
@@ -84,7 +73,7 @@ function App() {
             </div>
           </div>
 
-          <div className={shipping}>
+          <div>
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
