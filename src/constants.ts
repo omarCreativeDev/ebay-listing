@@ -1,5 +1,4 @@
-export const TITLE =
-  'Pokémon TCG Flygon V Sword & Shield: Brilliant Stars 164/172 Holo Ultra Rare card';
+export const TITLE = 'Pokémon TCG Galarian Articuno SWSH282 Holo Black Star Promo Card - MINT/NM';
 export const KEYWORDS = `UK seller, no reserve`;
 export const SPECS_URL = '';
 export const FEATURES = [];

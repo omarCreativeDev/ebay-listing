@@ -17,19 +17,16 @@ function App() {
             <p>{TITLE} for sale.</p>
 
             <p>
-              This Pokémon TCG card features the majestic Flygon V character, with 220 HP and a rare
-              ultra-rare rarity.
+              This rare and highly sought-after Pokémon TCG card features the legendary Articuno in
+              stunning holo promo finish.
             </p>
 
             <p>
-              It belongs to the Colour Dragon attribute in the game, making it a valuable addition
-              to any collector's set.
+              This is a must-have card for any Pokémon TCG collector. Don't miss out on this
+              opportunity to add a great card to your collection.
             </p>
 
-            <p>
-              Placed in a sleeve immediately after it was removed from the pack so its in excellent
-              condition.
-            </p>
+            <p>Placed in a sleeve and top loaded immediately so its in excellent condition.</p>
 
             {SPECS_URL?.length ? (
               <p>
