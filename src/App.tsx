@@ -14,19 +14,22 @@ function App() {
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <div className={content}>
-            <p>{TITLE} for sale.</p>
-
             <p>
-              This rare and highly sought-after Pokémon TCG card features the legendary Articuno in
-              stunning holo promo finish.
+              Up for sale is a stunning PSA 9 MINT Skyla 072/072 Full Art Trainer from the Shining
+              Fates set—a must-have for serious Pokémon collectors and fans of Full Art Trainer
+              cards!
+            </p>
+            <p>
+              This Skyla card boasts vibrant colors, flawless artwork, and top-notch PSA grading,
+              making it a great addition to any collection or investment portfolio. Shining Fates is
+              an iconic set, and this beautifully graded card will stand out in any display. Don’t
+              miss your chance to own this gem!
             </p>
 
-            <p>
-              This is a must-have card for any Pokémon TCG collector. Don't miss out on this
-              opportunity to add a great card to your collection.
-            </p>
-
-            <p>Placed in a sleeve and top loaded immediately so its in excellent condition.</p>
+            {/*<p>*/}
+            {/*  Placed in a sleeve immediately after it was removed from the pack so its in excellent*/}
+            {/*  condition.*/}
+            {/*</p>*/}
 
             {SPECS_URL?.length ? (
               <p>

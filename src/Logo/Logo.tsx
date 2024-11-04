@@ -12,8 +12,8 @@ export const Logo = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="399" height="107" fill="#1E1E1E" />
-        <rect width="399" height="107" fill="white" />
+        <rect width="399" height="107" fill="none" />
+        <rect width="399" height="107" fill="none" />
         <mask
           id="path-2-outside-1_0_1"
           maskUnits="userSpaceOnUse"
