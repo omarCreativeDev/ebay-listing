@@ -15,15 +15,15 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              Up for sale is a stunning PSA 9 MINT Skyla 072/072 Full Art Trainer from the Shining
-              Fates set—a must-have for serious Pokémon collectors and fans of Full Art Trainer
-              cards!
+              Take your Pokémon Trading Card Game collection to the next level with this incredible
+              Scarlet and Violet Paldean Fates Premium Collection featuring Skeledirge EX. This
+              premium set is perfect for collectors and players alike, offering exclusive items and
+              powerful cards to enhance your deck and strategy.
             </p>
             <p>
-              This Skyla card boasts vibrant colors, flawless artwork, and top-notch PSA grading,
-              making it a great addition to any collection or investment portfolio. Shining Fates is
-              an iconic set, and this beautifully graded card will stand out in any display. Don’t
-              miss your chance to own this gem!
+              This premium collection is a must-have for fans of the Scarlet and Violet series,
+              offering exciting cards and accessories in a sealed and pristine condition. Don't miss
+              your chance to own this exclusive item and add Skeledirge EX to your lineup!
             </p>
 
             {/*<p>*/}
@@ -41,7 +41,7 @@ function App() {
             {FEATURES.length > 0 ? (
               <>
                 <p>
-                  <strong>Features</strong>
+                  <strong>What's included</strong>
                 </p>
 
                 <ul>
