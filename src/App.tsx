@@ -66,22 +66,23 @@ function App() {
 
         <div>
           <div className={spacer}>
-            <h3 className={heading}>Payment</h3>
+            <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
-                <li>Payment must be made within 48 hours.</li>
-                <li>Returns are not provided.</li>
+                <li>All items are double bubble wrapped and then packed securely.</li>
+                <li>Combined postage available for multiple purchases.</li>
+                <li>All serial numbers recorded prior to dispatch.</li>
+                <li>International shipping and collection not available.</li>
               </ul>
             </div>
           </div>
 
           <div>
-            <h3 className={heading}>Shipping</h3>
+            <h3 className={heading}>Payment</h3>
             <div className={content}>
               <ul>
-                <li>Combined postage available for multiple purchases.</li>
-                <li>All serial numbers recorded prior to dispatch.</li>
-                <li>International shipping and collection not available.</li>
+                <li>Payment must be made within 48 hours.</li>
+                <li>Returns are not provided.</li>
               </ul>
             </div>
           </div>
