@@ -15,21 +15,20 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              Take your Pokémon Trading Card Game collection to the next level with this incredible
-              Scarlet and Violet Paldean Fates Premium Collection featuring Skeledirge EX. This
-              premium set is perfect for collectors and players alike, offering exclusive items and
-              powerful cards to enhance your deck and strategy.
+              Enhance your Pokémon TCG collection with the Max Rod 116/131 from SV8.5 Prismatic
+              Evolutions! This Holo Ace Spec Trainer card is a must-have for competitive players and
+              collectors alike. With its powerful effect and stunning holographic design, the Max
+              Rod stands out as a strategic asset in any deck.
             </p>
             <p>
-              This premium collection is a must-have for fans of the Scarlet and Violet series,
-              offering exciting cards and accessories in a sealed and pristine condition. Don't miss
-              your chance to own this exclusive item and add Skeledirge EX to your lineup!
+              Perfect for collectors looking to complete their Prismatic Evolutions set or players
+              seeking a powerful Ace Spec Trainer card to gain an edge in battle.
             </p>
 
-            {/*<p>*/}
-            {/*  Placed in a sleeve immediately after it was removed from the pack so its in excellent*/}
-            {/*  condition.*/}
-            {/*</p>*/}
+            <p>
+              Placed in a sleeve immediately after it was removed from the pack so its in excellent
+              condition.
+            </p>
 
             {SPECS_URL?.length ? (
               <p>
@@ -69,9 +68,12 @@ function App() {
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
-                <li>All items are double bubble wrapped and then packed securely.</li>
+                <li>Boxes/tins or slabs are double bubble wrapped and then packed securely.</li>
+                <li>
+                  Cards will be sent in a penny sleeve plus a card saver and then carefully
+                  packaged.
+                </li>
                 <li>Combined postage available for multiple purchases.</li>
-                <li>All serial numbers recorded prior to dispatch.</li>
                 <li>International shipping and collection not available.</li>
               </ul>
             </div>
