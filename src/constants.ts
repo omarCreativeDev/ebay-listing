@@ -1,4 +1,5 @@
-export const TITLE = 'Pokémon TCG: Max Rod 116/131 SV8.5 Prismatic Evolutions - Holo Ace Spec - NM';
+export const TITLE =
+  'Pokémon TCG: Pecharunt EX 093/064 Shrouded Fable - Special Illustration Rare NM';
 export const KEYWORDS = `UK seller, no reserve`;
 export const SPECS_URL = '';
 export const FEATURES = [];

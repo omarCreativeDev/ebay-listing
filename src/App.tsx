@@ -15,14 +15,13 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              Enhance your Pokémon TCG collection with the Max Rod 116/131 from SV8.5 Prismatic
-              Evolutions! This Holo Ace Spec Trainer card is a must-have for competitive players and
-              collectors alike. With its powerful effect and stunning holographic design, the Max
-              Rod stands out as a strategic asset in any deck.
+              This highly sought-after card features stunning artwork and is a key addition to any
+              collection. Pecharunt EX boasts powerful gameplay mechanics, making it a valuable
+              asset for competitive players and collectors alike.
             </p>
             <p>
-              Perfect for collectors looking to complete their Prismatic Evolutions set or players
-              seeking a powerful Ace Spec Trainer card to gain an edge in battle.
+              Perfect for fans of the latest Shrouded Fable expansion, this special illustration
+              rare is a standout piece.
             </p>
 
             <p>
@@ -68,7 +67,7 @@ function App() {
             <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
-                <li>Boxes/tins or slabs are double bubble wrapped and then packed securely.</li>
+                <li>Boxes/tins or slabs are bubble wrapped and then packed securely.</li>
                 <li>
                   Cards will be sent in a penny sleeve plus a card saver and then carefully
                   packaged.
