@@ -15,19 +15,22 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              This highly sought-after card features stunning artwork and is a key addition to any
-              collection. Pecharunt EX boasts powerful gameplay mechanics, making it a valuable
-              asset for competitive players and collectors alike.
+              For sale are 5x Pokémon TCG Paradise Dragona Booster Packs in Korean language, factory
+              sealed and brand new. This is a rare and highly sought-after set from the Pokémon
+              Trading Card Game series, featuring unique artwork and powerful cards that are
+              exclusive to the Korean release. Each pack is sealed in its original packaging,
+              ensuring authenticity and collectibility.
             </p>
             <p>
-              Perfect for fans of the latest Shrouded Fable expansion, this special illustration
-              rare is a standout piece.
+              Whether you're a dedicated collector or a competitive player, these packs offer the
+              chance to pull stunning cards from the Paradise Dragona expansion. Great for expanding
+              your collection or as a unique gift for any Pokémon fan.
             </p>
 
-            <p>
-              Placed in a sleeve immediately after it was removed from the pack so its in excellent
-              condition.
-            </p>
+            {/*<p>*/}
+            {/*  Placed in a sleeve immediately after it was removed from the pack so its in excellent*/}
+            {/*  condition.*/}
+            {/*</p>*/}
 
             {SPECS_URL?.length ? (
               <p>
