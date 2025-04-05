@@ -15,7 +15,7 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              For sale are 5x Pokémon TCG Paradise Dragona Booster Packs in Korean language, factory
+              For sale are 5x Pokémon TCG Fusion Arts Booster Packs in Korean language, factory
               sealed and brand new. This is a rare and highly sought-after set from the Pokémon
               Trading Card Game series, featuring unique artwork and powerful cards that are
               exclusive to the Korean release. Each pack is sealed in its original packaging,
@@ -23,8 +23,8 @@ function App() {
             </p>
             <p>
               Whether you're a dedicated collector or a competitive player, these packs offer the
-              chance to pull stunning cards from the Paradise Dragona expansion. Great for expanding
-              your collection or as a unique gift for any Pokémon fan.
+              chance to pull stunning cards from the Fusion Arts expansion. Great for expanding your
+              collection or as a unique gift for any Pokémon fan.
             </p>
 
             {/*<p>*/}
@@ -67,26 +67,30 @@ function App() {
 
         <div>
           <div className={spacer}>
-            <h3 className={heading}>Shipping</h3>
+            <h3 className={heading}>Packaging</h3>
             <div className={content}>
               <ul>
-                <li>Boxes/tins or slabs are bubble wrapped and then packed securely.</li>
                 <li>
-                  Cards will be sent in a penny sleeve plus a card saver and then carefully
-                  packaged.
+                  Boxes/tins or slabs are bubble wrapped and then packed securely for extra peace of
+                  mind.
                 </li>
-                <li>Combined postage available for multiple purchases.</li>
-                <li>International shipping and collection not available.</li>
+                <li>
+                  Cards will be sent in a penny sleeve plus a card saver and then dispatched with a
+                  hard card board backed envelope.
+                </li>
               </ul>
             </div>
           </div>
 
           <div>
-            <h3 className={heading}>Payment</h3>
+            <h3 className={heading}>Shipping</h3>
             <div className={content}>
               <ul>
-                <li>Payment must be made within 48 hours.</li>
-                <li>Returns are not provided.</li>
+                <li>
+                  Combined postage available for multiple purchases. Please get in contact for more
+                  info.
+                </li>
+                <li>International shipping and collection not available.</li>
               </ul>
             </div>
           </div>
