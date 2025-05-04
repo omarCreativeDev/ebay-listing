@@ -15,22 +15,46 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              For sale are 5x Pokémon TCG Fusion Arts Booster Packs in Korean language, factory
-              sealed and brand new. This is a rare and highly sought-after set from the Pokémon
-              Trading Card Game series, featuring unique artwork and powerful cards that are
-              exclusive to the Korean release. Each pack is sealed in its original packaging,
-              ensuring authenticity and collectibility.
+              For sale is a Leafeon V 013/159 Holo Ultra Rare card from the Pokémon TCG Crown Zenith
+              set. This card is in near mint (NM) condition and has been carefully stored in a
+              protective sleeve since opening. The surface, corners, edges, and centering are all in
+              excellent shape with no noticeable wear, making it a great addition to any collection
+              or competitive deck.
             </p>
+
             <p>
-              Whether you're a dedicated collector or a competitive player, these packs offer the
-              chance to pull stunning cards from the Fusion Arts expansion. Great for expanding your
-              collection or as a unique gift for any Pokémon fan.
+              This is an authentic English-language card and a sought-after ultra rare featuring the
+              popular Grass-type evolution of Eevee. A great choice for collectors or players
+              looking to enhance their Crown Zenith set. Ships securely to ensure it arrives in top
+              condition.
+            </p>
+
+            <p>
+              Multiple copies of this card are available, and 1 will be sent at random upon
+              purchase.
             </p>
 
             {/*<p>*/}
-            {/*  Placed in a sleeve immediately after it was removed from the pack so its in excellent*/}
-            {/*  condition.*/}
+            {/*  The sleeves are made from durable material, offering excellent protection against wear*/}
+            {/*  and tear while maintaining a smooth shuffle feel. Whether you're an avid tournament*/}
+            {/*  player or a passionate collector, these Misty & Psyduck sleeves add both style and*/}
+            {/*  functionality to your card deck.*/}
             {/*</p>*/}
+
+            {/*<p>*/}
+            {/*  This playmat is brand new and sealed, never used or opened. It is perfect for*/}
+            {/*  collectors, competitive players, or fans of the Hoenn region and its characters. Due*/}
+            {/*  to its limited release in Japan, it is a rare and sought-after item for international*/}
+            {/*  Pokémon enthusiasts.*/}
+            {/*</p>*/}
+
+            {/*<p>*/}
+            {/*  The item is authentic, factory-sealed, and has never been opened. Ships quickly and*/}
+            {/*  securely from a smoke-free environment. Don't miss your chance to own this*/}
+            {/*  sought-after Japanese exclusive accessory.*/}
+            {/*</p>*/}
+
+            {/*<p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>*/}
 
             {SPECS_URL?.length ? (
               <p>
