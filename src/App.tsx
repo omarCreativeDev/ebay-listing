@@ -15,24 +15,23 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              For sale is a Leafeon V 013/159 Holo Ultra Rare card from the Pokémon TCG Crown Zenith
-              set. This card is in near mint (NM) condition and has been carefully stored in a
-              protective sleeve since opening. The surface, corners, edges, and centering are all in
-              excellent shape with no noticeable wear, making it a great addition to any collection
-              or competitive deck.
+              Pokemon TCG: Brassius 135/131 Trainer Ultra Rare from the Prismatic Evolutions set.
+              This card is in Near Mint condition and has been carefully stored in a protective
+              sleeve. Surfaces, edges, and corners show minimal to no wear, consistent with NM
+              grading standards.
             </p>
 
             <p>
-              This is an authentic English-language card and a sought-after ultra rare featuring the
-              popular Grass-type evolution of Eevee. A great choice for collectors or players
-              looking to enhance their Crown Zenith set. Ships securely to ensure it arrives in top
-              condition.
+              The card features vibrant artwork and crisp text, making it an excellent addition for
+              collectors or players looking to enhance their deck. This is an authentic Ultra Rare
+              pull and comes from a smoke-free environment. A great opportunity to add a standout
+              Trainer card to your collection.
             </p>
 
-            <p>
-              Multiple copies of this card are available, and 1 will be sent at random upon
-              purchase.
-            </p>
+            {/*<p>*/}
+            {/*  Multiple copies of this card are available, and 1 will be sent at random upon*/}
+            {/*  purchase.*/}
+            {/*</p>*/}
 
             {/*<p>*/}
             {/*  The sleeves are made from durable material, offering excellent protection against wear*/}
