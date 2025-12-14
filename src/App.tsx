@@ -53,7 +53,7 @@ function App() {
             {/*  sought-after Japanese exclusive accessory.*/}
             {/*</p>*/}
 
-            {/*<p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>*/}
+            <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
 
             {SPECS_URL?.length ? (
               <p>
