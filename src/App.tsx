@@ -15,17 +15,18 @@ function App() {
           <h2 className={heading}>Description</h2>
           <div className={content}>
             <p>
-              Pokemon TCG: Brassius 135/131 Trainer Ultra Rare from the Prismatic Evolutions set.
-              This card is in Near Mint condition and has been carefully stored in a protective
-              sleeve. Surfaces, edges, and corners show minimal to no wear, consistent with NM
-              grading standards.
+              Pokemon TCG: Sneasel 061/131 Master Ball Reverse Holo from the Prismatic Evolutions
+              set is a standout collectible for players and collectors alike. This card features the
+              highly sought-after Master Ball reverse holo pattern, giving it a premium look that
+              shines beautifully in any collection.
             </p>
 
             <p>
-              The card features vibrant artwork and crisp text, making it an excellent addition for
-              collectors or players looking to enhance their deck. This is an authentic Ultra Rare
-              pull and comes from a smoke-free environment. A great opportunity to add a standout
-              Trainer card to your collection.
+              Card number 061/131, it showcases Sneasel in crisp detail with vibrant artwork true to
+              the Prismatic Evolutions release. The card is in Near Mint condition, showing minimal
+              wear and clean edges, and has been carefully stored to preserve its quality. A great
+              addition for Master Ball reverse holo collectors, Sneasel fans, or anyone looking to
+              complete their Prismatic Evolutions set.
             </p>
 
             {/*<p>*/}
@@ -79,8 +80,13 @@ function App() {
             <p>
               Please also&nbsp;
               <strong>
-                <a href="https://www.ebay.co.uk/sch/i.html?_ssn=poke_relics">
-                  check out my other auctions
+                <a
+                  href="https://www.ebay.co.uk/str/tcgrelics"
+                  target="_blank"
+                  className={link}
+                  rel="noreferrer"
+                >
+                  check out our shop
                 </a>
               </strong>
               .
