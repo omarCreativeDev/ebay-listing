@@ -1,5 +1,5 @@
 import styles from './App.module.scss';
-import { FEATURES, SPECS_URL, TITLE } from './constants';
+import { FEATURES, TITLE } from './constants';
 import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
 
@@ -29,39 +29,7 @@ function App() {
               complete their Prismatic Evolutions set.
             </p>
 
-            {/*<p>*/}
-            {/*  Multiple copies of this card are available, and 1 will be sent at random upon*/}
-            {/*  purchase.*/}
-            {/*</p>*/}
-
-            {/*<p>*/}
-            {/*  The sleeves are made from durable material, offering excellent protection against wear*/}
-            {/*  and tear while maintaining a smooth shuffle feel. Whether you're an avid tournament*/}
-            {/*  player or a passionate collector, these Misty & Psyduck sleeves add both style and*/}
-            {/*  functionality to your card deck.*/}
-            {/*</p>*/}
-
-            {/*<p>*/}
-            {/*  This playmat is brand new and sealed, never used or opened. It is perfect for*/}
-            {/*  collectors, competitive players, or fans of the Hoenn region and its characters. Due*/}
-            {/*  to its limited release in Japan, it is a rare and sought-after item for international*/}
-            {/*  Pokémon enthusiasts.*/}
-            {/*</p>*/}
-
-            {/*<p>*/}
-            {/*  The item is authentic, factory-sealed, and has never been opened. Ships quickly and*/}
-            {/*  securely from a smoke-free environment. Don't miss your chance to own this*/}
-            {/*  sought-after Japanese exclusive accessory.*/}
-            {/*</p>*/}
-
             <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
-
-            {SPECS_URL?.length ? (
-              <p>
-                To see full card list available in Crown Zenith set please visit{' '}
-                <strong className={link}>{SPECS_URL}.</strong>
-              </p>
-            ) : null}
 
             {FEATURES.length > 0 ? (
               <>
@@ -78,7 +46,7 @@ function App() {
             ) : null}
 
             <p>
-              Please also&nbsp;
+              Please also checkout&nbsp;
               <strong>
                 <a
                   href="https://www.ebay.co.uk/sch/poke_relics/m.html"
