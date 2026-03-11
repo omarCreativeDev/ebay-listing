@@ -81,12 +81,12 @@ function App() {
               Please also&nbsp;
               <strong>
                 <a
-                  href="https://www.ebay.co.uk/str/tcgrelics"
+                  href="https://www.ebay.co.uk/sch/poke_relics/m.html"
                   target="_blank"
                   className={link}
                   rel="noreferrer"
                 >
-                  check out our shop
+                  our other listings
                 </a>
               </strong>
               .
