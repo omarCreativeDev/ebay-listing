@@ -1,4 +1,4 @@
-import { CONTENT, IS_RAW_CARD } from '../constants';
+import { CONTENT } from '../constants';
 
 export const Content = () => {
   const maxParagraphLength = 300;
@@ -40,10 +40,6 @@ export const Content = () => {
       {paragraphsArray.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
-
-      {IS_RAW_CARD ? (
-        <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
-      ) : null}
     </>
   );
 };
