@@ -1,6 +1,7 @@
 import styles from './App.module.scss';
-import { FEATURES, TITLE } from './constants';
+import { EBAY_ID, FEATURES, TITLE } from './constants';
 import classNames from 'classnames';
+import { Content } from './Content/Content';
 import { Logo } from './Logo/Logo';
 
 function App() {
@@ -8,33 +9,18 @@ function App() {
 
   return (
     <div className={ebayListing}>
-      <Logo />
+      {/*<Logo />*/}
       <h1 className={classNames(h1, heading)}>{TITLE}</h1>
       <div className={wrapper}>
         <div className={mainSection}>
           <h2 className={heading}>Description</h2>
           <div className={content}>
-            <p>
-              Pokemon TCG: Sneasel 061/131 Master Ball Reverse Holo from the Prismatic Evolutions
-              set is a standout collectible for players and collectors alike. This card features the
-              highly sought-after Master Ball reverse holo pattern, giving it a premium look that
-              shines beautifully in any collection.
-            </p>
-
-            <p>
-              Card number 061/131, it showcases Sneasel in crisp detail with vibrant artwork true to
-              the Prismatic Evolutions release. The card is in Near Mint condition, showing minimal
-              wear and clean edges, and has been carefully stored to preserve its quality. A great
-              addition for Master Ball reverse holo collectors, Sneasel fans, or anyone looking to
-              complete their Prismatic Evolutions set.
-            </p>
-
-            <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
+            <Content />
 
             {FEATURES.length > 0 ? (
               <>
                 <p>
-                  <strong>What's included</strong>
+                  <strong>Features:</strong>
                 </p>
 
                 <ul>
@@ -49,7 +35,7 @@ function App() {
               Please also checkout&nbsp;
               <strong>
                 <a
-                  href="https://www.ebay.co.uk/sch/poke_relics/m.html"
+                  href={`https://www.ebay.co.uk/sch/${EBAY_ID}/m.html`}
                   target="_blank"
                   className={link}
                   rel="noreferrer"
