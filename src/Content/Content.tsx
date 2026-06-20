@@ -1,20 +1,49 @@
+import { CONTENT, IS_RAW_CARD } from '../constants';
+
 export const Content = () => {
+  const maxParagraphLength = 300;
+
+  const generateParagraphs = (text: string) => {
+    const sentences = text.trim().match(/[^.!?]+[.!?]+(\s|$)/g) || [text];
+
+    const paragraphs = [];
+    let currentParagraph = '';
+
+    sentences.forEach((sentence) => {
+      const trimmedSentence = sentence.trim();
+      if (!trimmedSentence) return;
+
+      // If adding this sentence exceeds the limit, push the current paragraph and start a new one
+      if (
+        currentParagraph.length + trimmedSentence.length > maxParagraphLength &&
+        currentParagraph.length > 0
+      ) {
+        paragraphs.push(currentParagraph.trim());
+        currentParagraph = trimmedSentence + ' ';
+      } else {
+        currentParagraph += trimmedSentence + ' ';
+      }
+    });
+
+    // Don't forget to push the very last paragraph chunk
+    if (currentParagraph.trim()) {
+      paragraphs.push(currentParagraph.trim());
+    }
+
+    return paragraphs;
+  };
+
+  const paragraphsArray = generateParagraphs(CONTENT);
+
   return (
     <>
-      <p>
-        Pansage 004/086 Master Ball Reverse Holo from the Black Bolt expansion in Near Mint
-        condition. This highly sought-after Japanese Poké Ball variant features the exclusive Master
-        Ball reverse holo pattern, making it a desirable addition for collectors and players alike.
-      </p>
+      {paragraphsArray.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
 
-      <p>
-        The card has been carefully stored and remains in excellent condition with strong surface
-        quality, clean edges, and sharp corners. Please review all photos to assess the card's
-        condition for yourself. A great opportunity to add a premium Black Bolt Master Ball Reverse
-        Holo card to your Pokémon TCG collection.
-      </p>
-
-      <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
+      {IS_RAW_CARD ? (
+        <p>Placed in a sleeve immediately after removal from pack so in excellent condition.</p>
+      ) : null}
     </>
   );
 };
