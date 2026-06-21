@@ -3,7 +3,7 @@ interface ContentProps {
 }
 
 export const Content = ({ description }: ContentProps) => {
-  const maxParagraphLength = 300;
+  const maxParagraphLength = 450;
 
   const generateParagraphs = (text: string) => {
     const sentences = text.trim().match(/[^.!?]+[.!?]+(\s|$)/g) || [text];

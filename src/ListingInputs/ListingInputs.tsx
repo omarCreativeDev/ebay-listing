@@ -4,17 +4,18 @@ import styles from './ListingInputs.module.scss';
 interface ListingInputsProps {
   title: string;
   setTitle: (value: string) => void;
-  description: string;
   setDescription: (value: string) => void;
+  onGenerateAiDescription: () => Promise<void>;
+  aiLoading: boolean;
 }
 
 export const ListingInputs: React.FC<ListingInputsProps> = ({
   title,
   setTitle,
-  description,
-  setDescription
+  onGenerateAiDescription,
+  aiLoading
 }) => {
-  const { inputsContainer, fieldGroup, labelHeader } = styles;
+  const { inputsContainer, fieldGroup, labelHeader, aiBtn } = styles;
 
   return (
     <div className={inputsContainer}>
@@ -35,13 +36,13 @@ export const ListingInputs: React.FC<ListingInputsProps> = ({
       </div>
 
       <div className={fieldGroup}>
-        <label>Description:</label>
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Enter item description..."
-          rows={5}
-        />
+        <button
+          onClick={onGenerateAiDescription}
+          disabled={aiLoading || !title.trim()}
+          className={aiBtn}
+        >
+          {aiLoading ? 'Gemini is writing...' : '✨ Generate Description with Gemini'}
+        </button>
       </div>
     </div>
   );

@@ -16,9 +16,35 @@ function App() {
   const [title, setTitle] = useState<string>(
     'Pokemon TCG: Gothitelle 043/086 Pokeball Reverse Holo Rare - White Flare - NM'
   );
-  const [description, setDescription] = useState<string>(
-    "Gothitelle 043/086 Poké Ball Reverse Holo Rare from the White Flare set. Card is in Near Mint (NM) condition, showing minimal signs of handling and maintaining excellent overall appearance. The Poké Ball Reverse Holo pattern displays beautifully, making this a great addition for collectors looking to complete their White Flare master set or add a standout holographic card to their collection. Please review photos carefully for the card's exact condition. The card will be packaged securely to ensure safe delivery."
-  );
+  const [description, setDescription] = useState<string>('');
+  const [aiLoading, setAiLoading] = useState<boolean>(false);
+
+  const handleGenerateAiDescription = async () => {
+    setAiLoading(true);
+    try {
+      const response = await fetch('http://localhost:5001/api/generate-description', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: `give me a description to sell ${title} on ebay without html, icons or emojis. max 2 paragraphs only. 
+
+          CRITICAL INSTRUCTIONS:
+          - Do NOT include any conversational introduction like "Here is your description".
+          - Do NOT repeat the item title or include any bold markdown headers at the start.
+          `
+        })
+      });
+
+      const data = await response.json();
+      if (data.text) {
+        setDescription(data.text);
+      }
+    } catch (err) {
+      console.error('Failed to communicate with API server:', err);
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   return (
     <>
@@ -27,19 +53,24 @@ function App() {
       <ListingInputs
         title={title}
         setTitle={setTitle}
-        description={description}
         setDescription={setDescription}
+        onGenerateAiDescription={handleGenerateAiDescription}
+        aiLoading={aiLoading}
       />
 
       <div className={ebayListing} ref={markupRef}>
-        <h1 className={classNames(h1, heading)}>{title}</h1>
         {/*<Logo />*/}
+        <h1 className={classNames(h1, heading)}>{title}</h1>
 
         <div className={wrapper}>
           <div className={mainSection}>
             <h2 className={heading}>Description</h2>
             <div className={content}>
-              <Content description={description} />
+              {description ? (
+                <Content description={description} />
+              ) : (
+                <p>Click the generate button above to create description text...</p>
+              )}
 
               {FEATURES.length > 0 ? (
                 <>
