@@ -14,19 +14,23 @@ export const ListingInputs: React.FC<ListingInputsProps> = ({
   description,
   setDescription
 }) => {
-  const { inputsContainer, title: titleClass, fieldGroup } = styles;
+  const { inputsContainer, fieldGroup, labelHeader } = styles;
 
   return (
     <div className={inputsContainer}>
-      <p className={titleClass}>Listing Details</p>
-
       <div className={fieldGroup}>
-        <label>Item Title:</label>
+        <div className={labelHeader}>
+          <label>Enter title (up to 80 characters):</label>
+          <span>
+            Total characters: <strong>{title?.length || 0}</strong>
+          </span>
+        </div>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="e.g., Pokemon TCG: Gothitelle..."
+          maxLength={80}
         />
       </div>
 
