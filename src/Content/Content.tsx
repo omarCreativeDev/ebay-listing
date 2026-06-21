@@ -1,6 +1,8 @@
-import { CONTENT } from '../constants';
+interface ContentProps {
+  description: string;
+}
 
-export const Content = () => {
+export const Content = ({ description }: ContentProps) => {
   const maxParagraphLength = 300;
 
   const generateParagraphs = (text: string) => {
@@ -13,7 +15,6 @@ export const Content = () => {
       const trimmedSentence = sentence.trim();
       if (!trimmedSentence) return;
 
-      // If adding this sentence exceeds the limit, push the current paragraph and start a new one
       if (
         currentParagraph.length + trimmedSentence.length > maxParagraphLength &&
         currentParagraph.length > 0
@@ -25,7 +26,6 @@ export const Content = () => {
       }
     });
 
-    // Don't forget to push the very last paragraph chunk
     if (currentParagraph.trim()) {
       paragraphs.push(currentParagraph.trim());
     }
@@ -33,7 +33,8 @@ export const Content = () => {
     return paragraphs;
   };
 
-  const paragraphsArray = generateParagraphs(CONTENT);
+  // 1. Chunk the live description string from props instead of the static constant
+  const paragraphsArray = generateParagraphs(description);
 
   return (
     <>
