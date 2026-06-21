@@ -12,7 +12,7 @@ export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
 
   const handleCopy = async () => {
     try {
-      const divHtml = targetRef.current ? targetRef.current.innerHTML : '';
+      const divHtml = targetRef.current ? targetRef.current.outerHTML : '';
       const styleTags = document.head.querySelectorAll('style');
       const styleHtml = Array.from(styleTags)
         .map((tag) => tag.outerHTML)
