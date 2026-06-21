@@ -1,17 +1,21 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styles from './App.module.scss';
-import { EBAY_ID, FEATURES, TITLE } from './constants';
+import { FEATURES, TITLE } from './constants';
 import classNames from 'classnames';
 import { Content } from './Content/Content';
 import { CopyStyleAndHtmlBtn } from './CopyStyleAndHtmlBtn/CopyStyleAndHtmlBtn';
+import { AccountSelector } from './AccountSelector/AccountSelector';
 import { Logo } from './Logo/Logo';
 
 function App() {
   const { ebayListing, heading, h1, wrapper, mainSection, spacer, content, link } = styles;
   const markupRef = useRef<HTMLDivElement>(null);
+  const [ebayId, setEbayId] = useState<string>('poke_gems');
 
   return (
     <>
+      <AccountSelector currentId={ebayId} onSelectId={setEbayId} />
+
       <div className={ebayListing} ref={markupRef}>
         {/*<Logo />*/}
         <h1 className={classNames(h1, heading)}>{TITLE}</h1>
@@ -39,7 +43,7 @@ function App() {
                 Please also checkout&nbsp;
                 <strong>
                   <a
-                    href={`https://www.ebay.co.uk/sch/${EBAY_ID}/m.html`}
+                    href={`https://www.ebay.co.uk/sch/${ebayId}/m.html`}
                     target="_blank"
                     className={link}
                     rel="noreferrer"
@@ -84,6 +88,7 @@ function App() {
           </div>
         </div>
       </div>
+
       <CopyStyleAndHtmlBtn targetRef={markupRef} />
     </>
   );
