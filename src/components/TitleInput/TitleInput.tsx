@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './ListingInputs.module.scss';
+import styles from './TitleInput.module.scss';
 
-interface ListingInputsProps {
+interface TitleInputProps {
   title: string;
   setTitle: (value: string) => void;
   setDescription: (value: string) => void;
@@ -9,7 +9,7 @@ interface ListingInputsProps {
   aiLoading: boolean;
 }
 
-export const ListingInputs: React.FC<ListingInputsProps> = ({
+export const TitleInput: React.FC<TitleInputProps> = ({
   title,
   setTitle,
   onGenerateAiDescription,
@@ -41,7 +41,7 @@ export const ListingInputs: React.FC<ListingInputsProps> = ({
           disabled={aiLoading || !title.trim()}
           className={aiBtn}
         >
-          {aiLoading ? 'Gemini is writing...' : '✨ Generate Description with Gemini'}
+          {aiLoading ? 'Ai is thinking...' : '✨ Generate Description with Ai'}
         </button>
       </div>
     </div>

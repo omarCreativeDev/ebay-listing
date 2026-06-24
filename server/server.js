@@ -34,8 +34,8 @@ app.post('/api/generate-description', async (req, res) => {
     // The SDK exposes the generated text directly on the response object
     res.json({ text: response.text });
   } catch (error) {
-    console.error('Error generating content from Gemini:', error);
-    res.status(500).json({ error: 'Failed to generate description from Gemini API' });
+    console.error('Error generating content from Ai:', error);
+    res.status(500).json({ error: 'Failed to generate description from Ai' });
   }
 });
 

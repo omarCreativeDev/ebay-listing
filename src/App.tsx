@@ -2,11 +2,12 @@ import { useRef, useState } from 'react';
 import styles from './App.module.scss';
 import { FEATURES } from './constants';
 import classNames from 'classnames';
-import { Content } from './Content/Content';
-import { CopyStyleAndHtmlBtn } from './CopyStyleAndHtmlBtn/CopyStyleAndHtmlBtn';
-import { AccountSelector } from './AccountSelector/AccountSelector';
-import { ListingInputs } from './ListingInputs/ListingInputs';
-import { Logo } from './Logo/Logo';
+import { Content } from './components/Content/Content';
+import { CopyStyleAndHtmlBtn } from './components/CopyStyleAndHtmlBtn/CopyStyleAndHtmlBtn';
+import { AccountSelector } from './components/AccountSelector/AccountSelector';
+import { TitleInput } from './components/TitleInput/TitleInput';
+import { generateAiDescription } from './services/aiService';
+import { Logo } from './components/Logo/Logo';
 
 function App() {
   const { ebayListing, heading, h1, wrapper, mainSection, spacer, content, link } = styles;
@@ -21,23 +22,12 @@ function App() {
 
   const handleGenerateAiDescription = async () => {
     setAiLoading(true);
+
     try {
-      const response = await fetch('http://localhost:5001/api/generate-description', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prompt: `give me a description to sell ${title} on ebay without html, icons or emojis. max 2 paragraphs only. 
+      const generatedText = await generateAiDescription(title);
 
-          CRITICAL INSTRUCTIONS:
-          - Do NOT include any conversational introduction like "Here is your description".
-          - Do NOT repeat the item title or include any bold markdown headers at the start.
-          `
-        })
-      });
-
-      const data = await response.json();
-      if (data.text) {
-        setDescription(data.text);
+      if (generatedText) {
+        setDescription(generatedText);
       }
     } catch (err) {
       console.error('Failed to communicate with API server:', err);
@@ -50,7 +40,7 @@ function App() {
     <>
       <AccountSelector currentId={ebayId} onSelectId={setEbayId} />
 
-      <ListingInputs
+      <TitleInput
         title={title}
         setTitle={setTitle}
         setDescription={setDescription}
