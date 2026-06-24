@@ -2,8 +2,8 @@
   "name": "ebay-listing",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@google/genai": "^2.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,6 +15,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "openai": "^4.85.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,7 +25,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
-    "start:frontend": "PORT=3000 react-scripts start",
+    "start:frontend": "cross-env PORT=3000 react-scripts start",
     "start:backend": "node server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "concurrently": "^10.0.3",
+    "cross-env": "^7.0.3",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",

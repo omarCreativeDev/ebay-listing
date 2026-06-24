@@ -1,22 +1,25 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { GoogleGenAI } from '@google/genai';
+import OpenAI from 'openai';
 
-// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5001;
 
-// Enable CORS so your React app (e.g., localhost:3000) can make requests to this server
 app.use(cors());
 app.use(express.json());
 
-// Initialize the official Google Gen AI SDK
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+// Initialize OpenAI client with explicit custom compression headers overridden
+const ai = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY || 'placeholder-key',
+  baseURL: 'https://api.groq.com/openai/v1',
+  defaultHeaders: {
+    'Accept-Encoding': 'identity' // <-- This forces clear-text payloads, stopping the Gzip premature close crash
+  }
+});
 
-// The proxy endpoint called by your React app
 app.post('/api/generate-description', async (req, res) => {
   const { prompt } = req.body;
 
@@ -25,20 +28,21 @@ app.post('/api/generate-description', async (req, res) => {
   }
 
   try {
-    // Request generation using the standard gemini-2.5-flash model
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: prompt
+    const response = await ai.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      messages: [{ role: 'user', content: prompt }],
+      temperature: 0.7
     });
 
-    // The SDK exposes the generated text directly on the response object
-    res.json({ text: response.text });
+    res.json({ text: response.choices[0].message.content });
   } catch (error) {
-    console.error('Error generating content from Ai:', error);
-    res.status(500).json({ error: 'Failed to generate description from Ai' });
+    console.error('Groq API Error:', error.message);
+    res
+      .status(500)
+      .json({ error: 'Failed to generate description from AI due to gateway connection lag.' });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Secure Proxy Server running on http://localhost:${PORT}`);
+  console.log(`Secure Local Proxy Server running on http://localhost:${PORT}`);
 });
