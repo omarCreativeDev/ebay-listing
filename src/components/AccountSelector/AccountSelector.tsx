@@ -1,27 +1,28 @@
 import React from 'react';
-import classNames from 'classnames';
+import { Button } from '../Button/Button';
 import styles from './AccountSelector.module.scss';
 import { ACCOUNT_IDS } from './constants';
 import { AccountSelectorProps } from './interfaces';
 
 export const AccountSelector: React.FC<AccountSelectorProps> = ({ currentId, onSelectId }) => {
-  const { selectorContainer, btn, active } = styles;
+  const { container, btn } = styles;
 
   return (
-    <div className={selectorContainer}>
+    <div className={container}>
       <p>
         Active Account: <span>{currentId}</span>
       </p>
 
       {ACCOUNT_IDS.map((account) => {
         return (
-          <button
+          <Button
             key={account.id}
             onClick={() => onSelectId(account.id)}
-            className={classNames(btn, currentId === account.id ? active : '')}
+            variant={currentId === account.id ? 'primary' : 'tertiary'}
+            className={btn}
           >
             {account.name} ({account.id})
-          </button>
+          </Button>
         );
       })}
     </div>

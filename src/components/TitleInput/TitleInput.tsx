@@ -1,13 +1,7 @@
 import React from 'react';
+import { Button } from '../Button/Button';
+import { TitleInputProps } from './interfaces';
 import styles from './TitleInput.module.scss';
-
-interface TitleInputProps {
-  title: string;
-  setTitle: (value: string) => void;
-  setDescription: (value: string) => void;
-  onGenerateAiDescription: () => Promise<void>;
-  aiLoading: boolean;
-}
 
 export const TitleInput: React.FC<TitleInputProps> = ({
   title,
@@ -36,13 +30,14 @@ export const TitleInput: React.FC<TitleInputProps> = ({
       </div>
 
       <div className={fieldGroup}>
-        <button
+        <Button
           onClick={onGenerateAiDescription}
           disabled={aiLoading || !title.trim()}
           className={aiBtn}
+          variant="primary"
         >
           {aiLoading ? 'Ai is thinking...' : '✨ Generate Description with Ai'}
-        </button>
+        </Button>
       </div>
     </div>
   );

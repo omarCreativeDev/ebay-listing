@@ -1,13 +1,8 @@
-import { RefObject, useState } from 'react';
-import classNames from 'classnames';
-import styles from './CopyStyleAndHtmlBtn.module.scss';
-
-interface CopyButtonProps {
-  targetRef: RefObject<HTMLDivElement | null>;
-}
+import { useState } from 'react';
+import { Button } from '../Button/Button';
+import { CopyButtonProps } from './interfaces';
 
 export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
-  const { btn, copySuccess } = styles;
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -28,8 +23,8 @@ export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
   };
 
   return (
-    <button onClick={handleCopy} className={classNames(btn, copied ? copySuccess : '')}>
-      {copied ? 'Copied to Clipboard! ✅' : 'Copy Style & HTML'}
-    </button>
+    <Button onClick={handleCopy} variant="secondary">
+      {copied ? '✅ Copied to Clipboard!' : 'Copy Style & HTML'}
+    </Button>
   );
 };
