@@ -15,9 +15,7 @@ function App() {
   const markupRef = useRef<HTMLDivElement>(null);
 
   const [ebayId, setEbayId] = useState<string>('poke_gems');
-  const [title, setTitle] = useState<string>(
-    'Pokemon TCG: Gothitelle 043/086 Pokeball Reverse Holo Rare - White Flare - NM'
-  );
+  const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [aiLoading, setAiLoading] = useState<boolean>(false);
 
@@ -53,11 +51,15 @@ function App() {
         <CopyStyleAndHtmlBtn targetRef={markupRef} />
       </div>
 
-      {aiLoading ? (
-        <h1 style={{ color: 'white' }}>Loading...</h1>
-      ) : (
+      {!title.trim().length && (
+        <h1 style={{ color: 'white' }}>Please enter a title to generate description...</h1>
+      )}
+
+      {aiLoading && <h1 style={{ color: 'white' }}>Loading...</h1>}
+
+      {!aiLoading && title.trim().length && description?.length ? (
         <div className={ebayListing} ref={markupRef}>
-          {/*<Logo />*/}
+          <Logo id={ebayId} />
           <h1 className={classNames(h1, heading)}>{title}</h1>
 
           <div className={wrapper}>
@@ -133,7 +135,7 @@ function App() {
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 }
