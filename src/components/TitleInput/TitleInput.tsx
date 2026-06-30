@@ -9,10 +9,10 @@ export const TitleInput: React.FC<TitleInputProps> = ({
   onGenerateAiDescription,
   aiLoading
 }) => {
-  const { inputsContainer, fieldGroup, labelHeader, aiBtn } = styles;
+  const { container, fieldGroup, labelHeader, aiBtn } = styles;
 
   return (
-    <div className={inputsContainer}>
+    <div className={container}>
       <div className={fieldGroup}>
         <div className={labelHeader}>
           <label>Enter title (up to 80 characters):</label>

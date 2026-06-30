@@ -1,10 +1,13 @@
-.inputsContainer {
+.container {
   font-family: tahoma, arial, serif;
-  margin-bottom: 20px;
   padding: 15px;
   background-color: #f9f9f9;
   border: 1px solid #eee;
   border-radius: 6px;
+  display: grid;
+  grid-template-columns: 2fr max-content;
+  align-items: end;
+  gap: 20px;
 }
 
 .labelHeader {
@@ -24,8 +27,6 @@
 }
 
 .fieldGroup {
-  margin-bottom: 12px;
-
   &:last-child {
     margin-bottom: 0;
   }

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Button } from '../Button/Button';
 import { CopyButtonProps } from './interfaces';
+import styles from './CopyStyleAndHtmlBtn.module.scss';
 
 export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
+  const { btn } = styles;
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -23,7 +25,7 @@ export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
   };
 
   return (
-    <Button onClick={handleCopy} variant="secondary">
+    <Button onClick={handleCopy} variant="secondary" className={btn}>
       {copied ? '✅ Copied to Clipboard!' : 'Copy Style & HTML'}
     </Button>
   );
