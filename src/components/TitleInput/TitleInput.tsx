@@ -1,3 +1,4 @@
+import { useAccount } from 'context/AccountContext/AccountContext';
 import React from 'react';
 import { Button } from '../Button/Button';
 import { TitleInputProps } from './interfaces';
@@ -10,6 +11,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
   aiLoading
 }) => {
   const { container, fieldGroup, labelHeader, aiBtn } = styles;
+  const { ebayId } = useAccount();
 
   return (
     <div className={container}>
@@ -34,7 +36,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
           onClick={onGenerateAiDescription}
           disabled={aiLoading || !title.trim()}
           className={aiBtn}
-          variant="primary"
+          variant={ebayId}
         >
           {aiLoading ? 'Ai is thinking...' : '✨ Generate Description with Ai'}
         </Button>

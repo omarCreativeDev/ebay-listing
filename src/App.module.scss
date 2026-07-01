@@ -1,10 +1,11 @@
+@use 'styles';
+
 @mixin borders {
   border: solid 1px #c7c7c7;
 }
 
 @mixin headingFont {
-  font-family: Palatino, 'Palatino Linotype', 'Lucida Sans Unicode', 'Lucida Grande', Garuda,
-    sans-serif;
+  font-family: styles.$font-family-palatino;
 }
 
 @mixin titleGradient {

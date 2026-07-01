@@ -1,4 +1,6 @@
 export interface AccountContextType {
-  ebayId: string;
-  setEbayId: (id: string) => void;
+  ebayId: Variant;
+  setEbayId: (id: Variant) => void;
 }
+
+export type Variant = 'poke_gems' | 'tcg_gems' | 'poke_relics';

@@ -1,5 +1,6 @@
+import { Account } from 'components/AccountSelector/interfaces';
 import React from 'react';
-import { useAccount } from '../../context/AccountContext/AccountContext';
+import { useAccount } from 'context/AccountContext/AccountContext';
 import { Button } from '../Button/Button';
 import styles from './AccountSelector.module.scss';
 import { ACCOUNT_IDS } from './constants';
@@ -14,12 +15,12 @@ export const AccountSelector: React.FC = () => {
         Active Account: <span>{ebayId}</span>
       </p>
 
-      {ACCOUNT_IDS.map((account) => {
+      {ACCOUNT_IDS.map((account: Account) => {
         return (
           <Button
             key={account.id}
             onClick={() => setEbayId(account.id)}
-            variant={ebayId === account.id ? 'primary' : 'tertiary'}
+            variant={account.id}
             className={btn}
           >
             {account.name} ({account.id})

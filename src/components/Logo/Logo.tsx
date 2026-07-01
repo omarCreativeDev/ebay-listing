@@ -1,4 +1,4 @@
-import { useAccount } from '../../context/AccountContext/AccountContext';
+import { useAccount } from 'context/AccountContext/AccountContext';
 import Styles from './Logo.module.scss';
 import { PokeGemsLogo } from './PokeGemsLogo';
 import { PokeRelicsLogo } from './PokeRelicsLogo';

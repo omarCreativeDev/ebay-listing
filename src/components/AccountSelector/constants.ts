@@ -1,4 +1,6 @@
-export const ACCOUNT_IDS = [
+import { Account } from 'components/AccountSelector/interfaces';
+
+export const ACCOUNT_IDS: Account[] = [
   {
     id: 'poke_gems',
     name: 'Ammi'
