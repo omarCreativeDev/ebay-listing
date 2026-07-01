@@ -1,17 +1,18 @@
-import { ILogoProps } from './interfaces';
+import { useAccount } from '../../context/AccountContext/AccountContext';
 import Styles from './Logo.module.scss';
 import { PokeGemsLogo } from './PokeGemsLogo';
 import { PokeRelicsLogo } from './PokeRelicsLogo';
 import { TcgGemsLogo } from './TcgGemsLogo';
 
-export const Logo = ({ id }: ILogoProps) => {
+export const Logo = () => {
   const { wrapper } = Styles;
+  const { ebayId } = useAccount();
 
   return (
     <div className={wrapper}>
-      {id === 'poke_gems' && <PokeGemsLogo />}
-      {id === 'poke_relics' && <PokeRelicsLogo />}
-      {id === 'tcg_gems' && <TcgGemsLogo />}
+      {ebayId === 'poke_gems' && <PokeGemsLogo />}
+      {ebayId === 'poke_relics' && <PokeRelicsLogo />}
+      {ebayId === 'tcg_gems' && <TcgGemsLogo />}
     </div>
   );
 };

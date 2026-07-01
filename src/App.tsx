@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div className={generator}>
-        <AccountSelector currentId={ebayId} onSelectId={setEbayId} />
+        <AccountSelector />
 
         <TitleInput
           title={title}
@@ -59,7 +59,7 @@ function App() {
 
       {!aiLoading && title.trim().length && description?.length ? (
         <div className={ebayListing} ref={markupRef}>
-          <Logo id={ebayId} />
+          <Logo />
           <h1 className={classNames(h1, heading)}>{title}</h1>
 
           <div className={wrapper}>
