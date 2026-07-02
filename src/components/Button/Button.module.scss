@@ -1,7 +1,7 @@
 @use 'styles';
 
 .btn {
-  font-family: tahoma, arial, serif;
+  font-family: styles.$font-family-primary;
   padding: 8px 16px;
   color: #fff;
   border: none;

@@ -1,7 +1,7 @@
 @use 'styles';
 
 @mixin headingFont {
-  font-family: styles.$font-family-palatino;
+  font-family: styles.$font-family-secondary;
 }
 
 @mixin secondaryGradient {
@@ -17,7 +17,7 @@
 }
 
 .ebayListing {
-  font-family: tahoma, arial, serif;
+  font-family: styles.$font-family-primary;
   font-size: 16px;
   margin: 0 auto;
   color: #000;

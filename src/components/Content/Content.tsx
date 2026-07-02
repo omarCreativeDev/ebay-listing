@@ -1,6 +1,6 @@
+import { FEATURES } from 'components/Content/constants';
 import { useAccount } from 'context/AccountContext/AccountContext';
-import { ContentProps } from './interfaces';
-import { FEATURES } from './constants';
+import { ContentProps } from 'components/Content/interfaces';
 import styles from './Content.module.scss';
 
 export const Content = ({ description }: ContentProps) => {

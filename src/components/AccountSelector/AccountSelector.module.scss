@@ -1,5 +1,7 @@
+@use 'styles';
+
 .container {
-  font-family: tahoma, arial, serif;
+  font-family: styles.$font-family-primary;
   padding: 15px;
   background-color: #f9f9f9;
   border: 1px solid #eee;
