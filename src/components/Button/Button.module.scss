@@ -14,15 +14,15 @@
   }
 
   &.poke_gems {
-    background-color: styles.$poke_gems;
+    background: linear-gradient(180deg, styles.$poke_gems_base 0%, styles.$poke_gems_deep 100%);
   }
 
   &.tcg_gems {
-    background-color: styles.$tcg_gems;
+    background: linear-gradient(180deg, styles.$tcg_gems_base 0%, styles.$tcg_gems_deep 100%);
     color: #000;
   }
 
   &.poke_relics {
-    background-color: styles.$poke_relics;
+    background: linear-gradient(180deg, styles.$poke_relics_base 0%, styles.$poke_relics_deep 100%);
   }
 }

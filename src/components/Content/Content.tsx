@@ -1,8 +1,11 @@
-interface ContentProps {
-  description: string;
-}
+import { useAccount } from 'context/AccountContext/AccountContext';
+import { ContentProps } from './interfaces';
+import { FEATURES } from './constants';
+import styles from './Content.module.scss';
 
 export const Content = ({ description }: ContentProps) => {
+  const { ebayId } = useAccount();
+  const { link } = styles;
   const maxParagraphLength = 450;
 
   const generateParagraphs = (text: string) => {
@@ -41,6 +44,35 @@ export const Content = ({ description }: ContentProps) => {
       {paragraphsArray.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
+
+      {FEATURES.length > 0 ? (
+        <>
+          <p>
+            <strong>Features:</strong>
+          </p>
+
+          <ul>
+            {FEATURES.map((feature) => (
+              <li key={feature}>{feature}</li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+
+      <p>
+        Please also checkout&nbsp;
+        <strong>
+          <a
+            href={`https://www.ebay.co.uk/sch/${ebayId}/m.html`}
+            target="_blank"
+            className={link}
+            rel="noreferrer"
+          >
+            our other listings
+          </a>
+        </strong>
+        .
+      </p>
     </>
   );
 };

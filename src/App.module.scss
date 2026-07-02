@@ -1,15 +1,7 @@
 @use 'styles';
 
-@mixin borders {
-  border: solid 1px #c7c7c7;
-}
-
 @mixin headingFont {
   font-family: styles.$font-family-palatino;
-}
-
-@mixin titleGradient {
-  background: linear-gradient(to bottom, #3664ae 0%, #1e2d5f 100%);
 }
 
 @mixin secondaryGradient {
@@ -52,17 +44,33 @@
     text-align: center;
     margin: 0;
     color: #fff;
-    @include titleGradient;
     @include headingFont;
-    font-weight: normal;
+    font-weight: bold;
     border-radius: 10px 10px 0 0;
+
+    &.poke_gems {
+      background: linear-gradient(180deg, styles.$poke_gems_base 0%, styles.$poke_gems_deep 100%);
+    }
+
+    &.tcg_gems {
+      background: linear-gradient(180deg, styles.$tcg_gems_base 0%, styles.$tcg_gems_deep 100%);
+      color: #000;
+    }
+
+    &.poke_relics {
+      background: linear-gradient(
+        180deg,
+        styles.$poke_relics_base 0%,
+        styles.$poke_relics_deep 100%
+      );
+    }
   }
 
   .h1 {
     text-transform: uppercase;
-    @include borders;
     border-radius: 10px;
     margin-bottom: 20px;
+    font-weight: bold;
   }
 
   p,
@@ -90,11 +98,13 @@
     font-weight: bold;
   }
 
+  .card {
+    border-radius: 10px;
+    @include secondaryGradient;
+  }
+
   .content {
     padding: 0 20px 20px 20px;
-    @include secondaryGradient;
-    @include borders;
-    border-radius: 0 0 10px 10px;
   }
 
   .spacer {
@@ -103,8 +113,6 @@
 
   .footer {
     text-align: right;
-    @include titleGradient;
-    @include borders;
     padding: 10px;
     color: #fff;
     font-size: 18px;
@@ -114,9 +122,5 @@
       padding-left: 5px;
       @include headingFont;
     }
-  }
-
-  .link {
-    overflow-wrap: anywhere;
   }
 }
