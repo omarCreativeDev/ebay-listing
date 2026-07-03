@@ -13,8 +13,16 @@ export const TitleInput: React.FC<TitleInputProps> = ({
   const { container, fieldGroup, labelHeader, aiBtn, inputWrapper, clearBtn } = styles;
   const { ebayId } = useAccount();
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!aiLoading && title.trim()) {
+      onGenerateAiDescription();
+    }
+  };
+
   return (
-    <div className={container}>
+    <form onSubmit={handleSubmit} className={container}>
       <div className={fieldGroup}>
         <div className={labelHeader}>
           <label htmlFor="titleInput">
@@ -34,7 +42,6 @@ export const TitleInput: React.FC<TitleInputProps> = ({
             id="titleInput"
           />
 
-          {/* Only show the clear button if there is text in the input */}
           {title && (
             <button
               type="button"
@@ -69,6 +76,6 @@ export const TitleInput: React.FC<TitleInputProps> = ({
           {aiLoading ? 'Ai is thinking...' : '✨ Generate Description with Ai'}
         </Button>
       </div>
-    </div>
+    </form>
   );
 };
