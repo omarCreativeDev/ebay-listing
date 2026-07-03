@@ -17,9 +17,11 @@ export const TitleInput: React.FC<TitleInputProps> = ({
     <div className={container}>
       <div className={fieldGroup}>
         <div className={labelHeader}>
-          <label>Enter title (up to 80 characters):</label>
+          <label htmlFor="titleInput">
+            <strong>Enter title</strong> (up to 80 characters)
+          </label>
           <span>
-            Total characters: <strong>{title?.length || 0}</strong>
+            <strong>Total characters</strong>: {title?.length || 0}
           </span>
         </div>
         <input
@@ -28,6 +30,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
           onChange={(e) => setTitle(e.target.value)}
           placeholder="e.g., Pokemon TCG: Gothitelle..."
           maxLength={80}
+          id="titleInput"
         />
       </div>
 

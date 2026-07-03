@@ -12,7 +12,7 @@ export const AccountSelector: React.FC = () => {
   return (
     <div className={container}>
       <p>
-        Active Account: <span>{ebayId}</span>
+        Active Account: <span className={styles[ebayId]}>{ebayId}</span>
       </p>
 
       {ACCOUNT_IDS.map((account: Account) => {

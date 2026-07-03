@@ -2,6 +2,7 @@
 
 .btn {
   font-family: styles.$font-family-primary;
+  font-size: styles.$font-size-primary;
   padding: 8px 16px;
   color: #fff;
   border: none;
@@ -19,7 +20,7 @@
 
   &.tcg_gems {
     background: linear-gradient(180deg, styles.$tcg_gems_base 0%, styles.$tcg_gems_deep 100%);
-    color: #000;
+    color: styles.$primary_color;
   }
 
   &.poke_relics {

@@ -10,11 +10,18 @@
   p {
     margin: 0 0 12px 0;
     font-weight: bold;
-    color: #333;
+  }
 
-    span {
-      color: #007bff;
-    }
+  .poke_gems {
+    color: styles.$poke_gems_base;
+  }
+
+  .tcg_gems {
+    color: styles.$tcg_gems_base;
+  }
+
+  .poke_relics {
+    color: styles.$poke_relics_base;
   }
 
   .btn {

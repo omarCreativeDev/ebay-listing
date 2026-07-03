@@ -16,11 +16,17 @@
   margin-bottom: 40px;
 }
 
+.fallBackMsg,
 .ebayListing {
   font-family: styles.$font-family-primary;
-  font-size: 16px;
+}
+
+.fallBackMsg {
+  color: #fff;
+}
+
+.ebayListing {
   margin: 0 auto;
-  color: #000;
 
   //* {
   //  -ms-filter: invert(0);
@@ -28,7 +34,6 @@
   //}
 
   a {
-    color: #000;
     text-decoration: underline;
   }
 
@@ -54,7 +59,7 @@
 
     &.tcg_gems {
       background: linear-gradient(180deg, styles.$tcg_gems_base 0%, styles.$tcg_gems_deep 100%);
-      color: #000;
+      color: styles.$primary_color;
     }
 
     &.poke_relics {
@@ -118,7 +123,6 @@
     font-size: 18px;
 
     span {
-      color: #b5d443;
       padding-left: 5px;
       @include headingFont;
     }

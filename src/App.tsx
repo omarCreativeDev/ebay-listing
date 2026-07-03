@@ -10,7 +10,8 @@ import { generateAiDescription } from 'services/aiService';
 import { Logo } from 'components/Logo/Logo';
 
 function App() {
-  const { generator, ebayListing, heading, h1, wrapper, spacer, content, card } = styles;
+  const { generator, ebayListing, heading, h1, wrapper, spacer, content, card, fallBackMsg } =
+    styles;
   const markupRef = useRef<HTMLDivElement>(null);
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
@@ -50,10 +51,10 @@ function App() {
       </div>
 
       {!title.trim().length && (
-        <h1 style={{ color: 'white' }}>Please enter a title to generate description...</h1>
+        <h1 className={fallBackMsg}>Please enter a title to generate description...</h1>
       )}
 
-      {aiLoading && <h1 style={{ color: 'white' }}>Loading...</h1>}
+      {aiLoading && <h1 className={fallBackMsg}>Loading...</h1>}
 
       {!aiLoading && title.trim().length && description?.length ? (
         <div className={ebayListing} ref={markupRef}>

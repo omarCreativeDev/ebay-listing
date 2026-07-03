@@ -1,0 +1,8 @@
+@use 'colors';
+@use 'variables';
+
+:root {
+  font-family: variables.$font-family-primary;
+  color: colors.$primary_color;
+  font-size: variables.$font-size-primary;
+}

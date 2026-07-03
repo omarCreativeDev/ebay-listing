@@ -17,15 +17,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4px;
-
-  label {
-    margin-bottom: 0;
-  }
-
-  span {
-    font-size: 0.9rem;
-    color: #555;
-  }
 }
 
 .fieldGroup {
@@ -36,20 +27,14 @@
   label {
     display: block;
     margin-bottom: 4px;
-    font-weight: 500;
   }
 
-  input,
-  textarea {
+  input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
-
-  textarea {
-    font-family: styles.$font-family-primary;
-    resize: vertical;
+    font-size: styles.$font-size-primary;
   }
 }
