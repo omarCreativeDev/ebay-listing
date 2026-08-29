@@ -26,10 +26,10 @@ export const TitleInput: React.FC<TitleInputProps> = ({
       <div className={fieldGroup}>
         <div className={labelHeader}>
           <label htmlFor="titleInput">
-            <strong>Enter title</strong> (up to 80 characters)
+            <strong>Enter title</strong>
           </label>
           <span>
-            <strong>Total characters</strong>: {title?.length || 0}
+            <strong>Characters left</strong>: {title?.length ? 80 - title?.length : 80}
           </span>
         </div>
         <div className={inputWrapper}>
@@ -73,7 +73,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
           className={aiBtn}
           variant={ebayId}
         >
-          {aiLoading ? 'Ai is thinking...' : '✨ Generate Description with Ai'}
+          {aiLoading ? 'Thinking...' : '✨ Generate'}
         </Button>
       </div>
     </form>
