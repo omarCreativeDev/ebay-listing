@@ -18,6 +18,9 @@ export const generateAiDescription = async (title: string): Promise<string | und
       CRITICAL INSTRUCTIONS:
       - Do NOT include any conversational introduction like "Here is your description".
       - Do NOT repeat the item title or include any bold markdown headers at the start.
+      - Do NOT mention anything about shipping, returns, or payment.
+      - Do NOT include any HTML tags, icons, or emojis in the description.
+      - Do NOT talk about condition, authenticity, or warranty. Let the pictures speak for themselves.
       `
     })
   });
