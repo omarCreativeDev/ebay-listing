@@ -1,8 +1,8 @@
 export const TcgGemsLogo = () => {
   return (
     <svg
-      width="auto"
-      height="auto"
+      width="1552"
+      height="387"
       viewBox="0 0 1552 387"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

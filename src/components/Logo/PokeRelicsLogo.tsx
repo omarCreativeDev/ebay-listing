@@ -1,8 +1,8 @@
 export const PokeRelicsLogo = () => {
   return (
     <svg
-      width="auto"
-      height="auto"
+      width="1588"
+      height="425"
       viewBox="0 0 1588 425"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

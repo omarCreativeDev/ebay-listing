@@ -1,8 +1,8 @@
 export const PokeGemsLogo = () => {
   return (
     <svg
-      width="auto"
-      height="auto"
+      width="1540"
+      height="427"
       viewBox="0 0 1540 427"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
