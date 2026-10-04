@@ -57,10 +57,12 @@ function App() {
       </div>
 
       {!title.trim().length && (
-        <h1 className={fallBackMsg}>Please enter a title to generate description...</h1>
+        <h1 className={classNames(fallBackMsg, styles[ebayId])}>
+          Please enter a title to generate description...
+        </h1>
       )}
 
-      {aiLoading && <h1 className={fallBackMsg}>Loading...</h1>}
+      {aiLoading && <h1 className={classNames(fallBackMsg, styles[ebayId])}>Loading...</h1>}
 
       {!aiLoading && title.trim().length && description?.length ? (
         <div className={ebayListing} ref={markupRef}>

@@ -29,6 +29,10 @@
 
 .fallBackMsg {
   color: #fff;
+
+  &.tcg_gems {
+    color: styles.$primary_color;
+  }
 }
 
 .ebayListing {
