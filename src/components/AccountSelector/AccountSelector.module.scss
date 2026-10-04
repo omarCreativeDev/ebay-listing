@@ -16,7 +16,8 @@
     color: styles.$poke_gems_base;
   }
 
-  .btn {
-    margin-right: 8px;
+  .buttons {
+    display: flex;
+    gap: 8px;
   }
 }

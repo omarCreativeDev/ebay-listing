@@ -7,15 +7,30 @@
   border: 1px solid #eee;
   border-radius: 6px;
   display: grid;
-  grid-template-columns: 2fr max-content;
-  align-items: end;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 12px;
+
+  @media only screen and (min-width: 480px) {
+    grid-template-columns: 2fr max-content;
+    align-items: end;
+    gap: 20px;
+  }
+}
+
+.aiBtn {
+  width: 100%;
+
+  @media only screen and (min-width: 480px) {
+    width: auto;
+  }
 }
 
 .labelHeader {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  gap: 4px;
   margin-bottom: 4px;
 }
 

@@ -6,7 +6,7 @@ import styles from './AccountSelector.module.scss';
 import { ACCOUNT_IDS } from './constants';
 
 export const AccountSelector: React.FC = () => {
-  const { container, btn, activeAccount } = styles;
+  const { container, activeAccount, buttons } = styles;
   const { ebayId, setEbayId } = useAccount();
 
   return (
@@ -15,18 +15,15 @@ export const AccountSelector: React.FC = () => {
         Active Account: <span className={activeAccount}>{ebayId}</span>
       </p>
 
-      {ACCOUNT_IDS.map((account: Account) => {
-        return (
-          <Button
-            key={account.id}
-            onClick={() => setEbayId(account.id)}
-            variant={account.id}
-            className={btn}
-          >
-            {account.name} ({account.id})
-          </Button>
-        );
-      })}
+      <div className={buttons}>
+        {ACCOUNT_IDS.map((account: Account) => {
+          return (
+            <Button key={account.id} onClick={() => setEbayId(account.id)} variant={account.id}>
+              {account.name} ({account.id})
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };

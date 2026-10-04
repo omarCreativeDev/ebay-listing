@@ -10,10 +10,16 @@
 
 .generator {
   display: grid;
-  grid-template-columns: max-content auto max-content;
-  align-items: end;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 20px;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 1400px) {
+    grid-template-columns: max-content auto max-content;
+    align-items: end;
+    gap: 40px;
+  }
 }
 
 .fallBackMsg,
@@ -35,6 +41,12 @@
 
   a {
     text-decoration: underline;
+    color: styles.$poke_gems_base;
+
+    &:visited,
+    &:hover {
+      color: styles.$poke_gems_base;
+    }
   }
 
   ul,
