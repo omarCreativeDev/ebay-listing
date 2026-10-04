@@ -1,5 +1,4 @@
-import { useAccount } from 'context/AccountContext/AccountContext';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './App.module.scss';
 import classNames from 'classnames';
 import { Content } from 'components/Content/Content';
@@ -8,6 +7,8 @@ import { AccountSelector } from 'components/AccountSelector/AccountSelector';
 import { TitleInput } from 'components/TitleInput/TitleInput';
 import { generateAiDescription } from 'services/aiService';
 import { Logo } from 'components/Logo/Logo';
+import { useAccount } from 'context/AccountContext/AccountContext';
+import { THEME_BODY_BACKGROUND } from 'styles/themeColors';
 
 function App() {
   const { generator, ebayListing, heading, h1, wrapper, spacer, content, card, fallBackMsg } =
@@ -17,6 +18,11 @@ function App() {
   const [description, setDescription] = useState<string>('');
   const [aiLoading, setAiLoading] = useState<boolean>(false);
   const { ebayId } = useAccount();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = THEME_BODY_BACKGROUND[ebayId];
+    document.title = ebayId;
+  }, [ebayId]);
 
   const handleGenerateAiDescription = async () => {
     setAiLoading(true);
@@ -59,11 +65,11 @@ function App() {
       {!aiLoading && title.trim().length && description?.length ? (
         <div className={ebayListing} ref={markupRef}>
           <Logo />
-          <h1 className={classNames(h1, heading, styles[ebayId])}>{title}</h1>
+          <h1 className={classNames(h1, heading)}>{title}</h1>
 
           <div className={wrapper}>
             <div className={card}>
-              <h2 className={classNames(heading, styles[ebayId])}>Description</h2>
+              <h2 className={heading}>Description</h2>
               <div className={content}>
                 {description ? (
                   <Content description={description} />
@@ -75,7 +81,7 @@ function App() {
 
             <div>
               <div className={classNames(card, spacer)}>
-                <h3 className={classNames(heading, styles[ebayId])}>Packaging</h3>
+                <h3 className={heading}>Packaging</h3>
                 <div className={content}>
                   <ul>
                     <li>
@@ -91,7 +97,7 @@ function App() {
               </div>
 
               <div className={card}>
-                <h3 className={classNames(heading, styles[ebayId])}>Shipping</h3>
+                <h3 className={heading}>Shipping</h3>
                 <div className={content}>
                   <ul>
                     <li>

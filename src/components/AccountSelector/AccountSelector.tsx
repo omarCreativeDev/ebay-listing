@@ -6,13 +6,13 @@ import styles from './AccountSelector.module.scss';
 import { ACCOUNT_IDS } from './constants';
 
 export const AccountSelector: React.FC = () => {
-  const { container, btn } = styles;
+  const { container, btn, activeAccount } = styles;
   const { ebayId, setEbayId } = useAccount();
 
   return (
     <div className={container}>
       <p>
-        Active Account: <span className={styles[ebayId]}>{ebayId}</span>
+        Active Account: <span className={activeAccount}>{ebayId}</span>
       </p>
 
       {ACCOUNT_IDS.map((account: Account) => {
