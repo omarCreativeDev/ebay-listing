@@ -4,7 +4,9 @@ interface GenerateDescriptionResponse {
 }
 
 /**
- * Sends a prompt to the local API server to generate an eBay item description.
+ * Sends a title to the local API server to generate an eBay item description.
+ * The server looks up verified card facts (Pokemon TCG / One Piece TCG APIs)
+ * before prompting the AI, so the description stays grounded in real card data.
  * @param title The title of the item being sold.
  * @returns A promise resolving to the clean text response or undefined.
  */
@@ -12,17 +14,7 @@ export const generateAiDescription = async (title: string): Promise<string | und
   const response = await fetch('http://localhost:5001/api/generate-description', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      prompt: `give me a description to sell ${title} on ebay without html, icons or emojis. max 2 paragraphs only. 
-
-      CRITICAL INSTRUCTIONS:
-      - Do NOT include any conversational introduction like "Here is your description".
-      - Do NOT repeat the item title or include any bold markdown headers at the start.
-      - Do NOT mention anything about shipping, returns, or payment.
-      - Do NOT include any HTML tags, icons, or emojis in the description.
-      - Do NOT talk about condition, authenticity, or warranty. Let the pictures speak for themselves.
-      `
-    })
+    body: JSON.stringify({ title })
   });
 
   if (!response.ok) {
