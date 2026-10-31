@@ -1,4 +1,5 @@
 import { useAccount } from 'context/AccountContext/AccountContext';
+import classNames from 'classnames';
 import React from 'react';
 import { Button } from '../Button/Button';
 import { TitleInputProps } from './interfaces';
@@ -8,9 +9,24 @@ export const TitleInput: React.FC<TitleInputProps> = ({
   title,
   setTitle,
   onGenerateAiDescription,
-  aiLoading
+  aiLoading,
+  playset,
+  setPlayset,
+  copyButton
 }) => {
-  const { container, fieldGroup, labelHeader, aiBtn, inputWrapper, clearBtn } = styles;
+  const {
+    container,
+    fieldGroup,
+    labelHeader,
+    aiBtn,
+    inputWrapper,
+    clearBtn,
+    playsetGroup,
+    playsetOption,
+    titleField,
+    playsetField,
+    ctaField
+  } = styles;
   const { ebayId } = useAccount();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,7 +39,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className={container}>
-      <div className={fieldGroup}>
+      <div className={classNames(fieldGroup, titleField)}>
         <div className={labelHeader}>
           <label htmlFor="titleInput">
             <strong>Enter title</strong>
@@ -66,7 +82,26 @@ export const TitleInput: React.FC<TitleInputProps> = ({
         </div>
       </div>
 
-      <div className={fieldGroup}>
+      <div className={classNames(fieldGroup, playsetField)}>
+        <label>
+          <strong>Playset</strong>
+        </label>
+        <div className={playsetGroup}>
+          {([2, 3, 4] as const).map((size) => (
+            <label key={size} className={playsetOption}>
+              <input
+                type="checkbox"
+                checked={playset === size}
+                disabled={playset !== null && playset !== size}
+                onChange={(e) => setPlayset(e.target.checked ? size : null)}
+              />
+              x{size} playset
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className={classNames(fieldGroup, ctaField)}>
         <Button
           onClick={onGenerateAiDescription}
           disabled={aiLoading || !title.trim()}
@@ -75,6 +110,8 @@ export const TitleInput: React.FC<TitleInputProps> = ({
         >
           {aiLoading ? 'Thinking...' : '✨ Generate'}
         </Button>
+
+        {copyButton}
       </div>
     </form>
   );

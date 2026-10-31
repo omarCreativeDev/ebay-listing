@@ -205,11 +205,17 @@ const buildOnePieceFactsBlock = (card) =>
 
 const buildPrompt = (
   title,
-  factsBlock
+  factsBlock,
+  playsetSize
 ) => `give me a description to sell ${title} on ebay without html, icons or emojis. max 2 paragraphs only.
 ${
   factsBlock
     ? `\nVERIFIED CARD FACTS (use these to stay accurate - do not state anything that contradicts them, and do not just list them out like a spec sheet):\n${factsBlock}\n`
+    : ''
+}
+${
+  playsetSize
+    ? `\nThis listing is a PLAYSET of ${playsetSize} copies of this card (x${playsetSize}). Make it clear in the description that the buyer is getting ${playsetSize} copies of the card, not a single card.\n`
     : ''
 }
       CRITICAL INSTRUCTIONS:
@@ -221,11 +227,13 @@ ${
       `;
 
 app.post('/api/generate-description', async (req, res) => {
-  const { title } = req.body;
+  const { title, playset } = req.body;
 
   if (!title) {
     return res.status(400).json({ error: 'Title is required' });
   }
+
+  const playsetSize = [2, 3, 4].includes(playset) ? playset : null;
 
   let factsBlock = null;
   try {
@@ -240,7 +248,7 @@ app.post('/api/generate-description', async (req, res) => {
     console.error('Card lookup failed, continuing without verified facts:', err.message);
   }
 
-  const prompt = buildPrompt(title, factsBlock);
+  const prompt = buildPrompt(title, factsBlock, playsetSize);
 
   try {
     const response = await ai.chat.completions.create({

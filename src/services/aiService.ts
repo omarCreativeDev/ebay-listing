@@ -1,3 +1,5 @@
+import { PlaysetSize } from 'components/TitleInput/interfaces';
+
 interface GenerateDescriptionResponse {
   text?: string;
   error?: string;
@@ -8,13 +10,17 @@ interface GenerateDescriptionResponse {
  * The server looks up verified card facts (Pokemon TCG / One Piece TCG APIs)
  * before prompting the AI, so the description stays grounded in real card data.
  * @param title The title of the item being sold.
+ * @param playset Optional playset size (3 or 4) if the listing is a playset of multiple copies.
  * @returns A promise resolving to the clean text response or undefined.
  */
-export const generateAiDescription = async (title: string): Promise<string | undefined> => {
+export const generateAiDescription = async (
+  title: string,
+  playset?: PlaysetSize
+): Promise<string | undefined> => {
   const response = await fetch('http://localhost:5001/api/generate-description', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title })
+    body: JSON.stringify({ title, playset })
   });
 
   if (!response.ok) {

@@ -8,14 +8,36 @@
   border-radius: 6px;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas:
+    'title'
+    'playset'
+    'cta';
   align-items: stretch;
   gap: 12px;
 
   @media only screen and (min-width: 480px) {
     grid-template-columns: 2fr max-content;
+    grid-template-areas:
+      'title title'
+      'playset cta';
     align-items: end;
     gap: 20px;
   }
+}
+
+.titleField {
+  grid-area: title;
+}
+
+.playsetField {
+  grid-area: playset;
+}
+
+.ctaField {
+  grid-area: cta;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .aiBtn {
@@ -61,6 +83,30 @@
 
     input {
       padding-right: 40px;
+    }
+  }
+
+  .playsetGroup {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .playsetOption {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0 !important;
+    font-weight: normal;
+    cursor: pointer;
+
+    input {
+      width: auto;
+      cursor: pointer;
+    }
+
+    input:disabled {
+      cursor: not-allowed;
     }
   }
 
