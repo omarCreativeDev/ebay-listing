@@ -10,8 +10,6 @@ export const TitleInput: React.FC<TitleInputProps> = ({
   setTitle,
   onGenerateAiDescription,
   aiLoading,
-  playset,
-  setPlayset,
   copyButton
 }) => {
   const {
@@ -21,10 +19,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
     aiBtn,
     inputWrapper,
     clearBtn,
-    playsetGroup,
-    playsetOption,
     titleField,
-    playsetField,
     ctaField
   } = styles;
   const { ebayId } = useAccount();
@@ -53,7 +48,7 @@ export const TitleInput: React.FC<TitleInputProps> = ({
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="e.g., Pokemon TCG: Gothitelle..."
+            placeholder="e.g., Pokemon TCG: Gothitelle X3 Playset..."
             maxLength={80}
             id="titleInput"
           />
@@ -79,25 +74,6 @@ export const TitleInput: React.FC<TitleInputProps> = ({
               </svg>
             </button>
           )}
-        </div>
-      </div>
-
-      <div className={classNames(fieldGroup, playsetField)}>
-        <label>
-          <strong>Playset</strong>
-        </label>
-        <div className={playsetGroup}>
-          {([2, 3, 4] as const).map((size) => (
-            <label key={size} className={playsetOption}>
-              <input
-                type="checkbox"
-                checked={playset === size}
-                disabled={playset !== null && playset !== size}
-                onChange={(e) => setPlayset(e.target.checked ? size : null)}
-              />
-              x{size} playset
-            </label>
-          ))}
         </div>
       </div>
 

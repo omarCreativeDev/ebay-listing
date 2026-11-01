@@ -27,7 +27,7 @@ export const CopyStyleAndHtmlBtn = ({ targetRef }: CopyButtonProps) => {
   };
 
   return (
-    <Button onClick={handleCopy} variant={ebayId} className={btn}>
+    <Button type="button" onClick={handleCopy} variant={ebayId} className={btn}>
       {copied ? '✅ Copied to Clipboard!' : 'Copy Style & HTML'}
     </Button>
   );

@@ -76,8 +76,19 @@ const TITLE_NOISE_WORDS = [
 
 const ONE_PIECE_CODE_RE = /\b([A-Z]{1,4}\d{0,2}-\d{1,4})\b/i;
 
+// Matches a playset callout in the title, e.g. "X3 Playset", "X4Playset", "x2playset".
+const PLAYSET_RE = /\bx\s*(\d{1,2})\s*playset\b/i;
+
+const extractPlaysetSize = (title) => {
+  const match = title.match(PLAYSET_RE);
+  return match ? parseInt(match[1], 10) : null;
+};
+
 const cleanTitleForSearch = (title) => {
   let cleaned = title;
+
+  // strip the playset callout first so it doesn't pollute the card search
+  cleaned = cleaned.replace(PLAYSET_RE, ' ');
 
   // card codes (OP01-001, ST01-001) and fraction numbers (41/111)
   cleaned = cleaned.replace(/\b[a-z]{1,4}\d{0,2}-\d{1,4}\b/gi, ' ');
@@ -227,13 +238,13 @@ ${
       `;
 
 app.post('/api/generate-description', async (req, res) => {
-  const { title, playset } = req.body;
+  const { title } = req.body;
 
   if (!title) {
     return res.status(400).json({ error: 'Title is required' });
   }
 
-  const playsetSize = [2, 3, 4].includes(playset) ? playset : null;
+  const playsetSize = extractPlaysetSize(title);
 
   let factsBlock = null;
   try {

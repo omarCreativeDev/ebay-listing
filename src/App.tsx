@@ -5,7 +5,6 @@ import { Content } from 'components/Content/Content';
 import { CopyStyleAndHtmlBtn } from 'components/CopyStyleAndHtmlBtn/CopyStyleAndHtmlBtn';
 import { AccountSelector } from 'components/AccountSelector/AccountSelector';
 import { TitleInput } from 'components/TitleInput/TitleInput';
-import { PlaysetSize } from 'components/TitleInput/interfaces';
 import { generateAiDescription } from 'services/aiService';
 import { Logo } from 'components/Logo/Logo';
 import { useAccount } from 'context/AccountContext/AccountContext';
@@ -18,7 +17,6 @@ function App() {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [aiLoading, setAiLoading] = useState<boolean>(false);
-  const [playset, setPlayset] = useState<PlaysetSize>(null);
   const { ebayId } = useAccount();
 
   useEffect(() => {
@@ -30,7 +28,7 @@ function App() {
     setAiLoading(true);
 
     try {
-      const generatedText = await generateAiDescription(title, playset);
+      const generatedText = await generateAiDescription(title);
 
       if (generatedText) {
         setDescription(generatedText);
@@ -53,8 +51,6 @@ function App() {
           setDescription={setDescription}
           onGenerateAiDescription={handleGenerateAiDescription}
           aiLoading={aiLoading}
-          playset={playset}
-          setPlayset={setPlayset}
           copyButton={<CopyStyleAndHtmlBtn targetRef={markupRef} />}
         />
       </div>
